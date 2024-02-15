@@ -1,0 +1,52 @@
+<section class="border border-primary d-flex align-items-center  align-content-center" style=" height: 106px">
+    <div class="mx-5 d-flex justify-content-around  border border-1 w-100 ">
+        <div class="ms-4">
+            <fa-icon [icon]="bar" class="fa-xl mycp" (click)="toggleSidebar()"></fa-icon>
+            <div class="sidebar" [class.open]="isSidebarOpen">
+                <div style="cursor: pointer;" (click)="toggleSidebar()">
+                    <p class="fs-6 ms-5 mt-3 fw-bold "> <fa-icon [icon]="arrow" class="me-3 fa-xl"></fa-icon> BACK </p>
+                </div>
+                <hr>
+                <!-- Sidebar Shows on Click  -->
+                <app-sidebar></app-sidebar>
+            </div>
+            <img src="assets/images/logo.png" alt="" class="ms-5">
+        </div>
+
+        <!-- this is subnav component -->
+        <app-subnav></app-subnav>
+
+        <!-- Last three icons  -->
+        <div class="mt-2">
+            <ul class="list-unstyled d-flex">
+                <li> <fa-icon [icon]="search" class="fa-xl text-secondary mycp"></fa-icon> </li>
+                <li class="ms-3" (mouseenter)="openChatBox()" (click)="closeChatBox()"> <fa-icon [icon]="gear"
+                        class="fa-xl text-secondary mycp"></fa-icon>
+                </li>
+                @if(isChatBoxOpen){
+                <div class="gearchatbox-container ps-3">
+                    <!-- Chatbox content -->
+                    <div class="gearchatbox-content">
+                        <ul class="list-unstyled ">
+                            <li class="fs-6 fw-bold">Language</li>
+                            <li class="text-muted ms-2 mycp">English</li>
+                            <li class="text-muted ms-2 mycp">Urdu</li>
+                        </ul>
+                        <ul class="list-unstyled mt-3">
+                            <li class="fs-6 fw-bold">Currency</li>
+                            <li class="text-muted ms-2 mycp">Euro</li>
+                            <li class="text-muted ms-2 mycp">Rupees</li>
+                            <li class="text-muted ms-2 mycp">Pound</li>
+                            <li class="text-muted ms-2 mycp">Dollars</li>
+                        </ul>
+                    </div>
+                </div>
+                }
+                <li class="ms-3 position-relative "> <fa-icon [icon]="cart" class="fa-xl text-secondary mycp"></fa-icon>
+                <span class="badge bg-danger position-absolute rounded-5" style="bottom: 25px; left: 10px; ">0</span> </li>
+                
+            </ul>
+        </div>
+
+    </div>
+</section>

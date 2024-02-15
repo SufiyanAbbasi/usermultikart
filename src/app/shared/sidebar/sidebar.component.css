@@ -1,0 +1,50 @@
+
+/* Open another chatbox when we hover on Chatbox list  */
+#clothing {
+    position: relative;
+    /* display: inline-block; */
+}
+
+#clothingChatbox {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 300px;
+    width: 600px;
+    background-color: #fff;
+    /* border: 1px solid #ccc; */
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#clothing:hover #clothingChatbox {
+    display: block;
+}
+
+.hover ul li:hover {
+    color: #fb4b3a;
+}
+
+
+/* Bags Portion and other sublists*/
+#clothingone {
+    position: relative;
+    /* display: inline-block; */
+}
+
+#clothingChatboxone {
+    display: none;
+    position: absolute;
+    /* top: 30%; */
+    left: 300px;
+    width: 250px;
+    background-color: #fff;
+    padding: 10px;
+}
+
+#clothingone:hover #clothingChatboxone {
+    display: block;
+}
+.chatboxone ul li:hover{
+    color: #fb4b3a;
+}

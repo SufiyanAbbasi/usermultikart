@@ -1,0 +1,103 @@
+/* Sidebar  */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  /* Initially hide the sidebar */
+  width: 300px;
+  height: 100%;
+  background-color: #fff;
+  /* color: #fff; */
+  transition: left 0.3s ease;
+  /* Add transition effect for smooth animation */
+}
+
+.sidebar.open {
+  left: 0;
+  /* Move the sidebar to the visible position */
+}
+
+
+
+/* <!-- The other section of navbar home, shop, products, features, pages and blogs   --> */
+/* Style for the sublist */
+
+.sublist {
+  position: absolute;
+  top: 20%;
+  /* left: 50%; */
+  z-index: 1000;
+  /* Ensure it's on top of other content */
+  background-color: #fff;
+  /* Background color */
+  padding: 10px;
+  border: 1px solid ccc;
+  padding-top: 30px;
+  /* display: none; */
+}
+
+/* Style for the sublist items */
+.sublist li {
+  list-style: none;
+  padding: 5px 10px;
+}
+
+/* Style for sublist items on hover */
+.sublist li:hover {
+  background-color: #f0f0f0;
+}
+
+/* Ensure the sublist is displayed when active */
+.sublist.active {
+  display: block;
+}
+
+/* here is the feature nav bar css   */
+/* Style for the chatbox container */
+.chatbox-container {
+  position: absolute;
+  /* bottom: 20px;
+  right: 20px; */
+  /* width: 300px; */
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  top: 30%;
+  left: 10%;
+}
+
+
+/* Style for the chatbox content */
+.chatbox-content {
+  width: full;
+}
+
+.chatbox-container .chatbox-content ul li:hover {
+  color: #fb4b3a;
+}
+
+
+
+/* CSS for gear icons chatbox   */
+/* Style for the chatbox container with the updated class name */
+.gearchatbox-container {
+  position: fixed;
+  top: 20%;
+  right: 10%;
+  width: 150px;
+  /* height: 100px; */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  background-color: #fff;
+  /* display: none;  */
+}
+
+/* Style for the chatbox content */
+.gearchatbox-content {
+  padding: 10px;
+}
+
+/* Style for the chatbox container when it's open */
+.gearchatbox-container.open {
+  display: block;
+}

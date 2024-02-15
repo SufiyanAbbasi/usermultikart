@@ -1,0 +1,77 @@
+<div class=" pe-2 mt-4">
+    <ul class=" mt-1 " id="clothing">
+        <li class="mycp d-flex justify-content-between align-content-center align-items-center">
+            <p>CLOTHING </p>
+            <p class="fa-xl fw-bold "> ></p>
+        </li>
+        <div class="chatbox" id="clothingChatbox">
+            <div class="d-flex ms-5 mt-4 ">
+                <div class="hover">
+                    <ul class="list-unstyled ">
+                        <li class="fw-bold  mycp">Mens</li>
+                        <li class="mt-2 mycp">Sports Wear</li>
+                        <li class="mt-2 mycp">Ethic Wear</li>
+                        <li class="mt-2 mycp">Top</li>
+                        <li class="mt-2 mycp">Bottom</li>
+                        <li class="mt-2 mycp">Shirts</li>
+                        <li class="mt-2 mycp">Trouser</li>
+                        <li class="mt-2 mycp">Nickers</li>
+                        <li class="mt-2">Shalwar Kameez</li>
+                        <li class="mt-2 mycp">Nickers</li>
+                    </ul>
+                </div>
+                <div class=" hover ms-5 ps-5">
+                    <ul class="list-unstyled ">
+                        <li class="fw-bold  mycp">Women</li>
+                        <li class="mt-2 mycp">Sports Wear</li>
+                        <li class="mt-2 mycp">Ethic Wear</li>
+                        <li class="mt-2 mycp">Top</li>
+                        <li class="mt-2 mycp">Bottom</li>
+                        <li class="mt-2 mycp">Shirts</li>
+                        <li class="mt-2 mycp">Trouser</li>
+                        <li class="mt-2 mycp">Nickers</li>
+                        <li class="mt-2 mycp">Shalwar Kameez</li>
+                        <li class="mt-2 mycp">Nickers</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </ul>
+    <ul class=" mt-1 " id="clothingone">
+        @for(box of mylist.num; track box.id;){
+        <li class="mycp d-flex justify-content-between align-content-center align-items-center mt-3"
+            (mouseenter)="toggleSublistVisibility(box.id)"
+            (mouseleave)="toggleSublistVisibility(box.id)">
+            <p>{{box.title}}</p>
+            @if(box.sublist && box.sublist.length > 1){
+            <p class="fa-xl fw-bold "> ></p>
+            }
+            <div class="chatboxone " id="clothingChatboxone">
+                @if(box.isSublistVisible){
+                <ul class="list-unstyled ps-4 ">
+                    @for(items of box.sublist; track items.id;){
+                    <li class="mt-2 mycp">{{items}}</li>
+                    }
+                </ul>
+                }
+            </div>
+        </li>
+        }
+    </ul>
+
+    <!-- old method of using @for which is *ngFor  -->
+    <!-- <ul class="mt-1" id="clothingone">
+        <li *ngFor="let box of mylist.num; let i = index"
+            class="mycp d-flex justify-content-between align-content-center align-items-center mt-3"
+            (mouseenter)="toggleSublistVisibility(i)" (mouseleave)="toggleSublistVisibility(i)">
+            <p>{{ box.title }}</p>
+            <p class="fa-xl fw-bold">></p>
+            <div class="chatboxone" id="clothingChatboxone">
+                <ul class="list-unstyled ps-4" *ngIf="box.isSublistVisible">
+                    <li *ngFor="let item of box.sublist" class="mt-2 mycp">{{ item }}</li>
+                </ul>
+            </div>
+        </li>
+    </ul> -->
+</div>

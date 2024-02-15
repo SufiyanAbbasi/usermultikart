@@ -1,0 +1,54 @@
+ul li:hover{
+    background: none;
+    color: #fb4b3a;
+}
+
+/* <!-- The other section of navbar home, shop, products, features, pages and blogs   --> */
+/* Style for the sublist */
+
+.sublist {
+    position: absolute;
+    top: 20%; 
+    /* left: 50%; */
+    z-index: 1000; /* Ensure it's on top of other content */
+    background-color: #fff; /* Background color */
+    padding: 10px;
+    border: 1px solid ccc;
+    padding-top: 30px;
+    /* display: none; */
+  }
+ 
+  /* Style for the sublist items */
+  .sublist li {
+    list-style: none;
+    padding: 5px 10px;
+  }
+  
+ 
+  /* Ensure the sublist is displayed when active */
+  .sublist.active {
+    display: block;
+  }
+  
+/* here is the feature nav bar css   */
+/* Style for the chatbox container */
+.chatbox-container {
+  position: absolute;
+  /* bottom: 20px;
+  right: 20px; */
+  /* width: 300px; */
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 999;
+  top: 30%;
+  left: 10%;
+}
+
+
+/* Style for the chatbox content */
+.chatbox-content {
+  width: full;
+}
+.chatbox-container .chatbox-content ul li:hover{
+  color: #fb4b3a;
+}

@@ -1,0 +1,78 @@
+<div class="d-flex">
+    @for(navbox of navlist.navnum; track navbox.id;) {
+    <ul class="list-unstyled small mt-2 " (mouseenter)="navbox.isSublistVisible = true"
+        (mouseleave)="navbox.isSublistVisible = $event.stopPropagation()">
+        <li class="d-flex align-items-center align-content-center mycp ms-4" [class.active]="isSublistVisible">
+            {{navbox.navtitle}}
+            <fa-icon [icon]="downangle" class="ms-2 "></fa-icon>
+        </li>
+        @if(navbox.isSublistVisible){
+        <ul class="sublist px-4" (mouseenter)="navbox.isSublistVisible = true"
+            (mouseleave)="navbox.isSublistVisible = $event.stopPropagation()">
+            @for(navitems of navbox.subnav; track navitems.id;){
+            <li class="mycp ps-2 pe-5">{{navitems}}</li>
+            }
+        </ul>
+        }
+
+    </ul>
+    }
+ 
+    <div class="main-content">
+        <ul class="list-unstyled d-flex mycp position-relative small mt-2" (mouseenter)="openChatBox()"
+            (click)="closeChatBox()">
+            <li class="d-flex align-items-center align-content-center mycp ms-4">FEATURES
+                <span class="badge bg-danger position-absolute rounded-0"
+                    style="bottom:25px; left:30px; font-size: x-small;">New</span>
+                <fa-icon [icon]="downangle" class="ms-2 "></fa-icon>
+            </li>
+        </ul>
+    </div>
+    <!-- Chatbox container -->
+
+    <div class="chatbox-container py-5">
+        @if(isChatBoxOpen){
+        <div class="d-flex chatbox-content">
+            <ul class=" list-unstyled  px-4">
+                <li class="mycp ps-2 pe-5 fw-bold ">Portfolio</li>
+                <li class="mycp ps-2 pe-5 mt-2">Portfolio Grid 2</li>
+                <li class="mycp ps-2 pe-5 mt-2">Portfolio Grid 3</li>
+                <li class="mycp ps-2 pe-5 mt-2">Portfolio Grid 4</li>
+                <li class="mycp ps-2 pe-5 mt-2">Memory Grid 2</li>
+                <li class="mycp ps-2 pe-5 mt-2">Memory Grid 3</li>
+                <li class="mycp ps-2 pe-5 mt-2">Memory Grid 4</li>
+            </ul>
+            <ul class=" list-unstyled  px-4">
+                <li class="mycp ps-2 pe-5 fw-bold ">Add to Cart</li>
+                <li class="mycp ps-2 pe-5 mt-2">Cart Right</li>
+                <li class="mycp ps-2 pe-5 mt-2">Cart Left</li>
+                <li class="mycp ps-2 pe-5 mt-2">Cart Top</li>
+                <li class="mycp ps-2 pe-5 mt-2">Cart Bottom</li>
+                <li class="mycp ps-2 pe-5 mt-2">Cart-Model-Popup</li>
+            </ul>
+            <ul class=" list-unstyled  px-4">
+                <li class="mycp ps-2 pe-5 fw-bold ">Theme Elements</li>
+                <li class="mycp ps-2 pe-5 mt-2">Title</li>
+                <li class="mycp ps-2 pe-5 mt-2">Collection Banner</li>
+                <li class="mycp ps-2 pe-5 mt-2">Home Slider</li>
+                <li class="mycp ps-2 pe-5 mt-2">Category</li>
+                <li class="mycp ps-2 pe-5 mt-2">Services</li>
+            </ul>
+            <ul class=" list-unstyled  px-4">
+                <li class="mycp ps-2 pe-5 fw-bold ">Product Elements</li>
+                <li class="mycp ps-2 pe-5 mt-2">Product Slider</li>
+                <li class="mycp ps-2 pe-5 mt-2">Banners</li>
+                <li class="mycp ps-2 pe-5 mt-2">Product Tabs</li>
+                <li class="mycp ps-2 pe-5 mt-2">Multislider</li>
+            </ul>
+            <ul class=" list-unstyled  px-4">
+                <li class="mycp ps-2 pe-5 fw-bold ">Email Templates</li>
+                <li class="mycp ps-2 pe-5 mt-2">Order Success</li>
+                <li class="mycp ps-2 pe-5 mt-2">Order Success 2</li>
+                <li class="mycp ps-2 pe-5 mt-2">Email Template </li>
+                <li class="mycp ps-2 pe-5 mt-2">Email Template 2</li>
+            </ul>
+        </div>
+        }
+    </div>
+</div>
