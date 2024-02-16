@@ -35,6 +35,8 @@ export class NavbarComponent {
     this.isChatBoxOpen = false;
   }
 
+  // open the cartbox on the cart icon 
+  showCartBox = false;
 
 
 

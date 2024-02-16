@@ -3,13 +3,14 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from "./pages/header/header.component";
 import { NavbarComponent } from "./pages/navbar/navbar.component";
+import { DashboardComponent } from "./pages/dashboard/dashboard.component";
 
 @Component({
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [CommonModule, RouterOutlet, HeaderComponent, NavbarComponent]
+    imports: [CommonModule, RouterOutlet, HeaderComponent, NavbarComponent, DashboardComponent]
 })
 export class AppComponent {
   title = 'usermulikart';

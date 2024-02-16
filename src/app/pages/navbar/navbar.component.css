@@ -9,6 +9,7 @@
   background-color: #fff;
   /* color: #fff; */
   transition: left 0.3s ease;
+  z-index: 999;
   /* Add transition effect for smooth animation */
 }
 
@@ -101,3 +102,27 @@
 .gearchatbox-container.open {
   display: block;
 }
+
+/* CSS for cart icon  */
+.container {
+  position: relative;
+}
+
+.cart-box {
+  position: absolute;
+  top: 60px; /* Adjust this value to position the cart box vertically */
+  right: 20px;
+  width: 200px; /* Adjust the width as needed */
+  background-color: #fff;
+  /* border: 1px solid #ccc; */
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 999; /* Ensure it appears above other content */
+  /* display: none;  */
+}
+
+.cart-box.open {
+  display: block; 
+}
+
+

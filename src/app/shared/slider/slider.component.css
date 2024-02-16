@@ -1,0 +1,94 @@
+.mybtn {
+    margin: 0 8rem;
+    background-color: #fb4b3a;
+    color: white;
+}
+
+.mybtn:hover {
+    border: 2px solid #fb4b3a;
+    background: white;
+    color: black;
+}
+
+.resslider {
+    top: 30%;
+    left: 10%;
+}
+
+.imgtxt {
+    position: absolute;
+    top: 35%;
+    left: 62%;
+}
+
+.imgtxt2 {
+    position: absolute;
+    top: 35%;
+    left: 48%;
+}
+
+.resdiv {
+    width: 45%;
+}
+
+.imgtxt h1 {
+    margin-top: -20px;
+}
+
+@media screen and (max-width:600px) {
+    .resslider {
+        top: 5%;
+        left: 5%;
+    }
+
+    .resslider h1 {
+        margin-left: 20%;
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width:575px) {
+    .resdiv {
+        width: 80%;
+        margin: auto;
+        margin-top: 20px;
+    }
+
+    .resdiv img {
+        height: 170px;
+    }
+
+    .imgtxt {
+        position: absolute;
+        top: 25%;
+        left: 62%;
+    }
+
+    .imgtxt2 {
+        position: absolute;
+        top: 25%;
+        left: 48%;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .resslider {
+        top: 2%;
+        left: 5%;
+    }
+
+    .resslider h1 {
+        margin-left: 20%;
+        font-size: 1.5rem;
+    }
+
+    .mybtn {
+        font-size: smaller;
+        width: 120px;
+    }
+    .resdiv {
+        width: 95%;
+        /* margin: auto; */
+        margin-top: 20px;
+    }
+}

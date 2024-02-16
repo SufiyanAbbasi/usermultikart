@@ -1,24 +1,100 @@
 <div class="d-flex">
-    @for(navbox of navlist.navnum; track navbox.id;) {
-    <ul class="list-unstyled small mt-2 " (mouseenter)="navbox.isSublistVisible = true"
-        (mouseleave)="navbox.isSublistVisible = $event.stopPropagation()">
-        <li class="d-flex align-items-center align-content-center mycp ms-4" [class.active]="isSublistVisible">
-            {{navbox.navtitle}}
-            <fa-icon [icon]="downangle" class="ms-2 "></fa-icon>
-        </li>
-        @if(navbox.isSublistVisible){
-        <ul class="sublist px-4" (mouseenter)="navbox.isSublistVisible = true"
-            (mouseleave)="navbox.isSublistVisible = $event.stopPropagation()">
-            @for(navitems of navbox.subnav; track navitems.id;){
-            <li class="mycp ps-2 pe-5">{{navitems}}</li>
-            }
-        </ul>
-        }
+    <nav class="navbar navbar-expand-xl">
+        <!-- Navbar Toggler Button -->
+        <button class="navbar-toggler border border-0 mycp" type="button" (click)="toggleSidebar()">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    </ul>
+        <!-- Navbar Content -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Your navigation items -->
+            @for(navbox of navlist.navnum; track navbox.id;) {
+            <ul class="navbar-nav list-unstyled small" (mouseenter)="navbox.isSublistVisible = true"
+                (mouseleave)="navbox.isSublistVisible = $event.stopPropagation()">
+                <!-- Navigation items loop -->
+                <li class="d-flex align-items-center align-content-center mycp ms-4 nav-item "
+                    (click)="toggleSublist(navbox)" [class.active]="isSublistVisible">
+                    <!-- <a class="nav-link" href="#" (click)="toggleSublist(navbox)">
+                        {{ navbox.navtitle }}
+                    </a> -->
+                    {{navbox.navtitle}}
+                    <fa-icon [icon]="downangle" class="ms-2"></fa-icon>
+                    <!-- Subnav list -->
+                    @if(navbox.isSublistVisible){
+                    <ul class="subnav sublist px-4 list-unstyled" 
+                        (mouseenter)="navbox.isSublistVisible = true"
+                        (mouseleave)="navbox.isSublistVisible = $event.stopPropagation()">
+                        <!-- <li *ngFor="let navitem of navbox.subnav" class="nav-item">
+                            <a class="nav-link" href="#"> {{ navitem }} </a>
+                        </li> -->
+                        @for(navitems of navbox.subnav; track navitems.id;){
+                            <li class="mycp ps-2 pe-5 nav-item">{{navitems}}</li>
+                            }
+                    </ul>
+                    }
+                </li>
+            </ul>
+            }
+        </div>
+    </nav>
+
+    @if(isSidebarOpen){
+    <!-- Right Sidebar -->
+    <div class="rightsidebar" [ngClass]="{'active': isSidebarOpen}">
+        <!-- Sidebar content goes here -->
+        <div class="sidebar" [class.open]="isSidebarOpen">
+            <div style="cursor: pointer;" (click)="toggleSidebar()">
+                <p class="fs-6 ms-5 mt-3 fw-bold "> <fa-icon [icon]="arrow" class="me-3 fa-xl"></fa-icon> BACK </p>
+            </div>
+            <hr>
+          
+        </div>
+        <ul class="list-unstyled">
+            <!-- Sidebar items loop -->
+            <li *ngFor="let navbox of navlist.navnum" class="nav-item">
+                <a class="nav-link" href="#" (click)="toggleSublist(navbox)">
+                    {{ navbox.navtitle }}
+                </a>
+                <!-- Subnav list -->
+                <ul class="subnav list-unstyled" *ngIf="navbox.isSublistVisible">
+                    <li *ngFor="let navitem of navbox.subnav" class="nav-item">
+                        <a class="nav-link" href="#"> {{ navitem }} </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
     }
- 
-    <div class="main-content">
+
+    <!-- <nav class="navbar navbar-expand-xl">
+        <button class="navbar-toggler  border border-0 mycp" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent">
+            <p class="navbar-toggler-icon"></p></button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            @for(navbox of navlist.navnum; track navbox.id;) {
+            <ul class="list-unstyled small" (mouseenter)="navbox.isSublistVisible = true"
+                (mouseleave)="navbox.isSublistVisible = $event.stopPropagation()">
+                <li class="d-flex align-items-center align-content-center mycp ms-4" [class.active]="isSublistVisible">
+                    {{navbox.navtitle}}
+                    <fa-icon [icon]="downangle" class="ms-2"></fa-icon>
+                </li>
+                @if(navbox.isSublistVisible){
+                <ul class="sublist px-4" (mouseenter)="navbox.isSublistVisible = true"
+                    (mouseleave)="navbox.isSublistVisible = $event.stopPropagation()">
+                    @for(navitems of navbox.subnav; track navitems.id;){
+                    <li class="mycp ps-2 pe-5">{{navitems}}</li>
+                    }
+                </ul>
+                }
+
+            </ul>
+            }
+        </div>
+    </nav> -->
+
+
+    <div class="main-content d-none d-xl-block mt-2">
         <ul class="list-unstyled d-flex mycp position-relative small mt-2" (mouseenter)="openChatBox()"
             (click)="closeChatBox()">
             <li class="d-flex align-items-center align-content-center mycp ms-4">FEATURES
@@ -30,7 +106,7 @@
     </div>
     <!-- Chatbox container -->
 
-    <div class="chatbox-container py-5">
+    <div class=" chatbox-container py-5">
         @if(isChatBoxOpen){
         <div class="d-flex chatbox-content">
             <ul class=" list-unstyled  px-4">

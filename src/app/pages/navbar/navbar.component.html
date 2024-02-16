@@ -1,7 +1,7 @@
-<section class="border border-primary d-flex align-items-center  align-content-center" style=" height: 106px">
-    <div class="mx-5 d-flex justify-content-around  border border-1 w-100 ">
-        <div class="ms-4">
-            <fa-icon [icon]="bar" class="fa-xl mycp" (click)="toggleSidebar()"></fa-icon>
+<section class=" d-flex align-items-center  align-content-center" style=" height: 106px">
+    <div class="mx-md-0  mx-lg-5 d-flex justify-content-around  w-100 ">
+        <div class="ms-1  ms-sm-4">
+            <fa-icon [icon]="bar" class="fa-xl mycp mt-2" (click)="toggleSidebar()"></fa-icon>
             <div class="sidebar" [class.open]="isSidebarOpen">
                 <div style="cursor: pointer;" (click)="toggleSidebar()">
                     <p class="fs-6 ms-5 mt-3 fw-bold "> <fa-icon [icon]="arrow" class="me-3 fa-xl"></fa-icon> BACK </p>
@@ -10,14 +10,14 @@
                 <!-- Sidebar Shows on Click  -->
                 <app-sidebar></app-sidebar>
             </div>
-            <img src="assets/images/logo.png" alt="" class="ms-5">
+            <img src="assets/images/logo.png" alt="" class="ms-4 ms-lg-5 mt-2">
         </div>
 
         <!-- this is subnav component -->
         <app-subnav></app-subnav>
 
         <!-- Last three icons  -->
-        <div class="mt-2">
+        <div class="d-none d-sm-block mt-2">
             <ul class="list-unstyled d-flex">
                 <li> <fa-icon [icon]="search" class="fa-xl text-secondary mycp"></fa-icon> </li>
                 <li class="ms-3" (mouseenter)="openChatBox()" (click)="closeChatBox()"> <fa-icon [icon]="gear"
@@ -42,9 +42,18 @@
                     </div>
                 </div>
                 }
-                <li class="ms-3 position-relative "> <fa-icon [icon]="cart" class="fa-xl text-secondary mycp"></fa-icon>
-                <span class="badge bg-danger position-absolute rounded-5" style="bottom: 25px; left: 10px; ">0</span> </li>
-                
+                <li class="ms-3 position-relative" (mouseenter)="showCartBox = true" (mouseleave)="showCartBox = false">
+                    <fa-icon [icon]="cart" class="fa-xl text-secondary mycp"></fa-icon>
+                    <span class="badge bg-danger position-absolute rounded-5"
+                        style="bottom: 25px; left: 10px; ">0</span>
+                </li>
+                @if(showCartBox){
+                <div class="container">
+                    <div class="cart-box">
+                        <p>The cart is empty</p>
+                    </div>
+                </div>
+                }
             </ul>
         </div>
 
