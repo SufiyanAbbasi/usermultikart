@@ -31,6 +31,16 @@
     width: 45%;
 }
 
+.resdiv:hover{
+    background-color: #f0f0f0;
+  padding: 2px;
+  margin: 2px;
+  transition: transform 0.5s ease-in-out;
+}
+.resdiv:hover {
+    transform: scale(1);
+  }
+
 .imgtxt h1 {
     margin-top: -20px;
 }
