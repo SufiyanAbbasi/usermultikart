@@ -76,6 +76,11 @@
   display: block;
 }
 
+/* routerlink active  */
+.active{
+  color: #fb4b3a;
+}
+
 @media screen and (max-width: 600px) {
   .cusdiv .myp {
     width: 80%;

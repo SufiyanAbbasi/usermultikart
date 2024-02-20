@@ -22,32 +22,52 @@ export class NewproductsComponent {
 
   list: any = [
     {id:1,
-     mainimg :"../../../assets/images/tc1.jpg",
-     secondaryimg : ['../../../assets/images/tc1.jpg', '../../../assets/images/tc2.jpg', '../../../assets/images/tc3.jpg'],
+     mainimg :"../../../assets/images/tc2.jpg",
      dress : 'Trim Dress',
      newprice : '$87.00 ',
      oldprice: '$145.00'
     },
     {id:2,
-     mainimg :"../../../assets/images/tc4.jpg",
-     secondaryimg : ['../../../assets/images/tc4.jpg', '../../../assets/images/tc5.jpg', '../../../assets/images/tc6.jpg','../../../assets/images/tc7.jpg'],
-     dress : 'Belted Dress',
-     newprice : '$111.00 ',
-     oldprice: '$185.00'
-    },
-    {id:3,
-     mainimg :"../../../assets/images/tc8.jpg",
-     secondaryimg : ['../../../assets/images/tc8.jpg', '../../../assets/images/tc9.jpg'],
-     dress : 'Fitted Dress',
-     newprice : '$104.00 ',
-     oldprice: '$174.00'
-    },
-    {id:4,
      mainimg :"../../../assets/images/tc10.jpg",
-     secondaryimg : ['../../../assets/images/tc10.jpg', '../../../assets/images/tc11.jpg'],
      dress : 'Belted Top',
      newprice : '$49.00 ',
      oldprice: '$98.00'
+    },
+    {id:3,
+     mainimg :"../../../assets/images/tc12.jpg",
+     dress : 'V-neck Dress',
+     newprice : '$94.50 ',
+     oldprice: '$315.00'
+    },
+    {id:4,
+     mainimg :"../../../assets/images/tc6.jpg",
+     dress : 'Maxi Dress',
+     newprice : '$159.00 ',
+     oldprice: '$266.00'
+    },
+    {id:5,
+     mainimg :"../../../assets/images/tc13.jpg",
+     dress : 'Fit Flare Dress',
+     newprice : '$133.00 ',
+     oldprice: '$148.00'
+    },
+    {id:6,
+     mainimg :"../../../assets/images/tc1.jpg",
+     dress : 'Midi Dress',
+     newprice : '$240.00 ',
+     oldprice: '$400.00'
+    },
+    {id:7,
+     mainimg :"../../../assets/images/tc14.jpg",
+     dress : ' Tulip  Dress',
+     newprice : '$130.00 ',
+     oldprice: '$145.00'
+    },
+    {id:8,
+     mainimg :"../../../assets/images/tc15.jpg",
+     dress : 'Skater Dress',
+     newprice : '$126.00 ',
+     oldprice: '$210.00'
     },
   
    

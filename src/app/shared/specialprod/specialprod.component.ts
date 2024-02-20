@@ -1,13 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faStar, faShoppingCart, faMagnifyingGlass, faHeart, faCodeCompare } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-specialprod',
   standalone: true,
-  imports: [CommonModule, FontAwesomeModule, RouterLink, RouterOutlet],
+  imports: [CommonModule, FontAwesomeModule, RouterLink, RouterOutlet, RouterLinkActive],
   templateUrl: './specialprod.component.html',
   styleUrl: './specialprod.component.css'
 })

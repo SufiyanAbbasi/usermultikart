@@ -1,52 +1,22 @@
-<div class="mt-5">
+<div class="mt-1 mt-sm-1 mt-md-5">
     <div class="cusdiv d-flex flex-column align-items-center">
         <p class="mytext fs-5">Exclusive Products</p>
         <h1 class="fs-2 fw-bold ">SPECIAL <span class=" border-bottom border-2 border-danger">PR</span>ODUCT</h1>
     </div>
 </div>
 
-<div class="d-flex justify-content-center mt-3">
+<div class="d-flex  justify-content-center mt-3">
     <ul class="d-flex gap-5 list-unstyled fs-6">
-        <li class="mycp fw-bold  mytext " routerLink="">NEW PRODUCTS</li>
-        <li class="mycp fw-bold " routerLink="bestseller">BEST SELLERS</li>
-        <li class="mycp fw-bold ">FEATURED PRODUCTS</li>
-        <li class="mycp fw-bold ">ON SALE</li>
+        <div class="d-flex flex-column flex-md-row gap-1 gap-md-5">
+            <li class="mycp fw-bold " routerLink="newproducts" routerLinkActive="active">NEW PRODUCTS</li>
+            <li class="mycp fw-bold " routerLink="bestseller" routerLinkActive="active">BEST SELLERS</li>
+        </div>
+        <div class="d-flex flex-column flex-md-row gap-1 gap-md-5">
+            <li class="mycp fw-bold " routerLink="featuredproducts" routerLinkActive="active">FEATURED PRODUCTS</li>
+            <li class="mycp fw-bold " routerLink="onsale" routerLinkActive="active">ON SALE</li>
+        </div>
     </ul>
 </div>
-<router-outlet></router-outlet>
-<!-- <div class="container-fluid  d-flex justify-content-evenly   border-1 px-5 my-5">
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3  row-cols-lg-4">
-    @for(item of list; track item.id;){
-        <div class="d-flex flex-column ">
-            <div class="container1 mx-2 mycp position-relative maindiv" style="background-color: #F8F8F8;">
-                <div class="rounded-5 bg-danger d-flex  align-content-center align-items-center  position-absolute ms-2" style="width: 38px; height: 38px; top:15px">
-                    <small class="small text-white fw-bold ms-1" >NEW</small>
-                </div>
-                <div class="image-container">
-                    <img src="{{item.mainimg}}" style="margin-left: -20px;" alt="Image 1" class="main-image">
-                </div>
-                <div class="d-flex flex-column position-absolute myicons" style="bottom: 70px; right:10px">
-                    <fa-icon [icon]="cart"  class="mt-3  myfaicon"></fa-icon>
-                    <fa-icon [icon]="heart" class="mt-3  myfaicon"></fa-icon>
-                    <fa-icon [icon]="search" class="mt-3  myfaicon"></fa-icon>
-                    <fa-icon [icon]="compare" class="mt-3  myfaicon"></fa-icon>
-                </div>
-            </div>
-            <div class="mx-2">
-                <div class="d-flex">
-                    <fa-icon [icon]="star" class="text-warning small"></fa-icon>
-                    <fa-icon [icon]="star" class="text-warning small"></fa-icon>
-                    <fa-icon [icon]="star" class="text-warning small"></fa-icon>
-                    <fa-icon [icon]="star" class="text-warning small"></fa-icon>
-                    <fa-icon [icon]="star" class="text-warning small"></fa-icon>
-                </div>
-                <p class="fs-6 text-muted mycp">{{item.dress}}</p>
-                <div class="" style="margin-top: -20px;">
-                    <span class="fs-5 fw-bold">{{item.newprice}} </span>&nbsp; <span class="small text-muted">{{item.oldprice}}</span>
-                </div>
-             
-            </div>
-        </div>
-    }
-</div>
-</div> -->
+
+
+<router-outlet></router-outlet>   

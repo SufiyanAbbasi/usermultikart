@@ -1,0 +1,51 @@
+<div class="mt-4 mt-sm-4 mt-md-5">
+    <div class="cusdiv d-flex flex-column align-items-center">
+        <p class="mytext fs-5">Recent Story</p>
+        <h1 class="fs-2 fw-bold " style="margin-top: -10px;">FROM<span class=" border-bottom border-2 border-danger">
+                THE</span> BLOG</h1>
+    </div>
+</div>
+
+<div class="container-fluid   mt-4">
+    <div class="d-flex  flex-wrap px-5" style="width: 100%; margin: auto;">
+        @for(item of blog; track item){
+        <div class="col-sm-6 col-md-4" >
+            <div class="mycp">
+                <img src={{item.img}} alt="" width="90%">
+            </div>
+            <div class="text-center mt-3">
+                <p class="mytext  fw-bold mycp">{{item.date}}</p>
+                <p class=" fw-bold mycp " style="margin-top: -10px;">LOREM IPSUM DOLOR SIT <br> CONSECTETUER ADISPIDING
+                    ELIT
+                </p>
+                <hr style="width: 20%;margin: auto;">
+
+                <p class="text-muted">by: John Dio, 2 Comment</p>
+            </div>
+        </div>
+        }
+    </div>
+</div>
+
+<!-- <div class="col-sm-6 col-md-4" >
+        <div class="mycp">
+            <img src="assets/images/blog1.jpg" alt="" width="100%">
+        </div>
+        <div class="text-center mt-3">
+            <p class="mytext  fw-bold mycp">25 January 2018</p>
+            <p class=" fw-bold mycp " style="margin-top: -10px;">LOREM IPSUM DOLOR SIT <br> CONSECTETUER ADISPIDING ELIT </p> <hr style="width: 20%;margin: auto;">
+
+            <p class="text-muted">by: John Dio, 2 Comment</p>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4" >
+        <div class="mycp">
+            <img src="assets/images/blog1.jpg" alt="" width="100%">
+        </div>
+        <div class="text-center mt-3">
+            <p class="mytext  fw-bold mycp">25 January 2018</p>
+            <p class=" fw-bold mycp " style="margin-top: -10px;">LOREM IPSUM DOLOR SIT <br> CONSECTETUER ADISPIDING ELIT </p> <hr style="width: 20%;margin: auto;">
+
+            <p class="text-muted">by: John Dio, 2 Comment</p>
+        </div>
+    </div> -->
