@@ -10,7 +10,7 @@
                 <!-- Sidebar Shows on Click  -->
                 <app-sidebar></app-sidebar>
             </div>
-            <img src="assets/images/logo.png" alt="" class="ms-4 ms-lg-5 mt-2">
+            <img src="assets/images/logo.png" routerLink="dashboard" alt="" class="ms-4 ms-lg-5 mt-2 mycp">
         </div>
 
         <!-- this is subnav component -->
@@ -20,11 +20,11 @@
         <div class="d-none d-sm-block mt-2">
             <ul class="list-unstyled d-flex">
                 <li> <fa-icon [icon]="search" class="fa-xl text-secondary mycp"></fa-icon> </li>
-                <li class="ms-3" (mouseenter)="openChatBox()" (click)="closeChatBox()"> <fa-icon [icon]="gear"
+                <li class="ms-3" (mouseenter)="openChatBox()"> <fa-icon [icon]="gear"
                         class="fa-xl text-secondary mycp"></fa-icon>
                 </li>
                 @if(isChatBoxOpen){
-                <div class="gearchatbox-container ps-3">
+                <div class="gearchatbox-container ps-3"  (mouseleave)="closeChatBox()">
                     <!-- Chatbox content -->
                     <div class="gearchatbox-content">
                         <ul class="list-unstyled ">

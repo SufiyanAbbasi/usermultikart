@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faStar, faShoppingCart, faMagnifyingGlass, faHeart, faCodeCompare } from '@fortawesome/free-solid-svg-icons';
+import { faStar, faShoppingCart, faMagnifyingGlass, faHeart, faCodeCompare, } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({

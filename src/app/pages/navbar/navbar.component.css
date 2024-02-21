@@ -84,7 +84,7 @@
 .gearchatbox-container {
   position: fixed;
   top: 20%;
-  right: 10%;
+  right: 5%;
   width: 150px;
   /* height: 100px; */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);

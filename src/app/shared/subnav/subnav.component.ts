@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faAngleDown, faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons';
 
@@ -7,13 +8,14 @@ import { faAngleDown, faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-i
 @Component({
   selector: 'app-subnav',
   standalone: true,
-  imports: [FontAwesomeModule, CommonModule],
+  imports: [FontAwesomeModule, CommonModule,  RouterModule],
   templateUrl: './subnav.component.html',
   styleUrl: './subnav.component.css'
 })
 export class SubnavComponent {
   downangle = faAngleDown;
   arrow = faArrowAltCircleLeft;
+  constructor(private router: Router) {}
 
   //  The other section of navbar home, shop, products, features, pages and blogs 
   // here i make list 
@@ -92,4 +94,5 @@ export class SubnavComponent {
   toggleSublist(navbox: any) {
       navbox.isSublistVisible = !navbox.isSublistVisible;
   }
+
 }

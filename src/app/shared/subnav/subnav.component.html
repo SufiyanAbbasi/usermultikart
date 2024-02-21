@@ -28,7 +28,7 @@
                             <a class="nav-link" href="#"> {{ navitem }} </a>
                         </li> -->
                         @for(navitems of navbox.subnav; track navitems.id;){
-                            <li class="mycp ps-2 pe-5 nav-item">{{navitems}}</li>
+                            <li class="mycp ps-2 pe-5 nav-item"  [routerLink]="['/', navitems.toLowerCase()]">{{navitems}}</li>
                             }
                     </ul>
                     }
@@ -36,6 +36,32 @@
             </ul>
             }
         </div>
+
+
+
+        <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            @for(navbox of navlist.navnum; track navbox.id;) {
+            <ul class="navbar-nav list-unstyled small" (mouseenter)="navbox.isSublistVisible = true"
+                (mouseleave)="navbox.isSublistVisible = $event.stopPropagation()">
+                <li class="d-flex align-items-center align-content-center mycp ms-4 nav-item "
+                    (click)="toggleSublist(navbox)" [class.active]="isSublistVisible">
+                  
+                    {{navbox.navtitle}}
+                    <fa-icon [icon]="downangle" class="ms-2"></fa-icon>
+                    @if(navbox.isSublistVisible){
+                    <ul class="subnav sublist px-4 list-unstyled" 
+                        (mouseenter)="navbox.isSublistVisible = true"
+                        (mouseleave)="navbox.isSublistVisible = $event.stopPropagation()">
+                   
+                        @for(navitems of navbox.subnav; track navitems.id;){
+                            <li class="mycp ps-2 pe-5 nav-item">{{navitems}}</li>
+                            }
+                    </ul>
+                    }
+                </li>
+            </ul>
+            }
+        </div> -->
     </nav>
 
     @if(isSidebarOpen){
@@ -58,7 +84,7 @@
                 <!-- Subnav list -->
                 <ul class="subnav list-unstyled" *ngIf="navbox.isSublistVisible">
                     <li *ngFor="let navitem of navbox.subnav" class="nav-item">
-                        <a class="nav-link" href="#"> {{ navitem }} </a>
+                        <a class="nav-link" href="#"  [routerLink]="['/', navitem.toLowerCase()]"> {{ navitem }} </a>
                     </li>
                 </ul>
             </li>
@@ -66,32 +92,7 @@
     </div>
     }
 
-    <!-- <nav class="navbar navbar-expand-xl">
-        <button class="navbar-toggler  border border-0 mycp" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent">
-            <p class="navbar-toggler-icon"></p></button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            @for(navbox of navlist.navnum; track navbox.id;) {
-            <ul class="list-unstyled small" (mouseenter)="navbox.isSublistVisible = true"
-                (mouseleave)="navbox.isSublistVisible = $event.stopPropagation()">
-                <li class="d-flex align-items-center align-content-center mycp ms-4" [class.active]="isSublistVisible">
-                    {{navbox.navtitle}}
-                    <fa-icon [icon]="downangle" class="ms-2"></fa-icon>
-                </li>
-                @if(navbox.isSublistVisible){
-                <ul class="sublist px-4" (mouseenter)="navbox.isSublistVisible = true"
-                    (mouseleave)="navbox.isSublistVisible = $event.stopPropagation()">
-                    @for(navitems of navbox.subnav; track navitems.id;){
-                    <li class="mycp ps-2 pe-5">{{navitems}}</li>
-                    }
-                </ul>
-                }
-
-            </ul>
-            }
-        </div>
-    </nav> -->
+ 
 
 
     <div class="main-content d-none d-xl-block mt-2">

@@ -22,3 +22,12 @@ svg{
     height: 20px;
     cursor: pointer;
 }
+svg:hover{
+    color:#fb4b3a;
+}
+ul li{
+    opacity: 0.8;
+}
+ul li:hover{
+    color:#fb4b3a;
+}
