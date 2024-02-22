@@ -55,6 +55,25 @@ export class VegetableComponent {
     ]
 
   
+    // blogs Section 
+    vegblog: any = [
+        {
+          id:0,
+          img: 'assets/images/vegetable/veg8.jpg',
+          date: '25 January 2018',
+        },
+        {
+          id:1,
+          img: 'assets/images/vegetable/veg9.jpg',
+          date: '26 January 2018',
+        },
+        {
+          id:2,
+          img: 'assets/images/vegetable/veg10.jpg',
+          date: '27 January 2018',
+        },
+    
+      ]
 
 
 }

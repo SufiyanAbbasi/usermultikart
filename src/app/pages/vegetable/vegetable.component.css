@@ -191,6 +191,15 @@
   .maindiv:hover .myfaicon {
     display: block;
   }
+
+  /* Special products */
+  .midpic:hover .myfaicon{
+    display: block;
+  }
+  .specialproducts img:hover{
+    transform: scale(1.1);
+    transition: all 0.5s ease;
+  }
   
   @media screen and (max-width: 600px) {
     .cusdiv .myp {
@@ -250,4 +259,41 @@
         top: 30px;
         left: 40px;
     } 
+}
+
+/* Blogs   */
+.myblogs .mycp img {
+  transition: opacity 0.3s ease-in-out,
+   #ff4c3b 0.3s ease-in-out; 
+  background-color: transparent;
+} 
+
+.myblogs .mycp:hover img {
+  opacity: 0.5; /* Slightly reduce opacity on hover */
+  background-color: transparent; /* Set pink color with semi-transparency */
+}
+
+.myblogs .mycp:hover img {
+  opacity: 1; /* Start with full opacity */
+  background-color: transparent; /* Transparent background */
+  animation: colorChange 1s steps(4, end); /* Four-step animation */
+}
+
+@keyframes colorChange {
+  0% {
+    opacity: 1;
+    background-color: transparent;
+  }
+  25% {
+    opacity: 0.2;
+    background-color: #ff4c3b; /* Intermediate pink color */
+  }
+  50% {
+    opacity: 0.4;
+    background-color: #ff4c3b; /* Final pink color */
+  }
+  100% {
+    opacity:1;
+    background-color: #ff4c3b; /* Maintain final state */
+  }
 }

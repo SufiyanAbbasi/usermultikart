@@ -95,9 +95,9 @@
  
 
 
-    <div class="main-content d-none d-xl-block mt-2">
+    <div class="main-content d-none d-xl-block mt-2" >
         <ul class="list-unstyled d-flex mycp position-relative small mt-2" (mouseenter)="openChatBox()"
-            (click)="closeChatBox()">
+        >
             <li class="d-flex align-items-center align-content-center mycp ms-4">FEATURES
                 <span class="badge bg-danger position-absolute rounded-0"
                     style="bottom:25px; left:30px; font-size: x-small;">New</span>
@@ -107,7 +107,7 @@
     </div>
     <!-- Chatbox container -->
 
-    <div class=" chatbox-container py-5">
+    <div class=" chatbox-container py-5" (mouseleave)="closeChatBox()">
         @if(isChatBoxOpen){
         <div class="d-flex chatbox-content">
             <ul class=" list-unstyled  px-4">

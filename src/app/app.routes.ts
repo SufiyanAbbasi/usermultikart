@@ -9,6 +9,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { VegetableComponent } from './pages/vegetable/vegetable.component';
 import { WatchComponent } from './pages/watch/watch.component';
+import { FurnitureComponent } from './pages/furniture/furniture.component';
 
 export const routes: Routes = [
     {path: '', component:LoginComponent},
@@ -16,6 +17,7 @@ export const routes: Routes = [
     {path: 'dashboard', component:DashboardComponent},
     {path: 'vegetable', component:VegetableComponent},
     {path: 'watch', component:WatchComponent},
+    {path: 'furniture', component:FurnitureComponent},
     {
         path: 'dashboard',
         component: DashboardComponent,

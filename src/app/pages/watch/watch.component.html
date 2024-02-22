@@ -1,1 +1,294 @@
-<p>watch works!</p>
+<div>
+    <div id="carouselExampleAutoplaying" class="carousel slide w-100  h-100 " data-bs-ride="carousel">
+        <div class="carousel-inner ">
+            <div class="carousel-item active  w-100  h-100 position-relative ">
+                <img src="assets/images/watch/watch1.jpg" class="d-block w-100" alt="...">
+                <div class="resslider position-absolute text-start text-sm-center ">
+                    <p class=" small fs-6 text-muted fw-bolder " style="letter-spacing: 6px;">Everytime</p>
+                    <h1 class=" display-4 fw-bold">MITTNALIER</h1>
+                    <button type="button" class="mybtn btn rounded-0 mt-2  px-3 py-2">SHOP NOW</button>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="assets/images/watch/watch2.jpg" class="d-block w-100" alt="...">
+                <div class="resslider position-absolute text-start text-sm-center ">
+                    <p class=" small fs-6 text-muted fw-bolder " style="letter-spacing: 6px;">Welcome To Fashion</p>
+                    <h1 class=" display-4 fw-bold">MEN WATCH</h1>
+                    <button type="button" class="mybtn btn rounded-0 mt-2  px-3 py-2">SHOP NOW</button>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+<!-- logo Section  -->
+<app-logos></app-logos>
+
+<!-- Save 30% digital Watch   -->
+<div class="container border watchbg ">
+    <div class=" mt-2 d-flex justify-content-around ">
+        <div class="py-4">
+            <p class=" fs-4 fw-bold">SAVE <span class="mytext">30% OFF </span> DIGITAL WATCH </p>
+        </div>
+        <div class=" text-white px-5 mt-2 d-none d-md-block" style="height: 80px; background:#2D2A25;">
+            <p>11 &nbsp; &nbsp; &nbsp; : &nbsp; 11 &nbsp; &nbsp; &nbsp; : &nbsp; 11 &nbsp;&nbsp; &nbsp; : 11</p>
+            <p class="small text-secondary ">Days &nbsp; &nbsp; &nbsp; &nbsp; Hrs &nbsp; &nbsp; &nbsp; &nbsp; Min &nbsp;
+                &nbsp;&nbsp; &nbsp; Sec</p>
+
+        </div>
+    </div>
+
+</div>
+
+
+<!-- View More and watches  -->
+<!-- <div class="container d-flex gap-3">
+ 
+    @for(item of mywatch; track item){
+    <div class=" col-md-3 text-center pb-4 mywatchdiv ">
+        <img src="{{item.img}}" class="d-block img-fluid m-auto mt-5 " alt="...">
+        <p class="fw-bold fs-5 mt-2">WATCH MODELS</p>
+        <p class=" small mycp mt-3">{{item.text1}}</p>
+        <p class=" small mycp">{{item.text2}}</p>
+        <p class=" small mycp">{{item.text3}}</p>
+        <p class=" small mycp">{{item.text4}}</p>
+        <button class="watchbtn px-4 py-2 small fw-bold">VIEW MORE</button>
+    </div>
+    }
+
+</div> -->
+
+<!-- old method of for  -->
+<div class="container px-5 mt-5">
+    <div class="row row-cols-1  row-cols-sm-2 row-cols-lg-4">
+        <!-- Use ngFor to iterate over mywatch array -->
+        <div class="col mb-4" *ngFor="let item of mywatch">
+            <div class="text-center pb-4 mywatchdiv">
+                <img src="{{item.img}}" class="d-block img-fluid m-auto mt-5" alt="...">
+                <p class="fw-bold fs-5 mt-2">{{item.name}}</p>
+                <p class="small mycp mt-3">{{item.text1}}</p>
+                <p class="small mycp">{{item.text2}}</p>
+                <p class="small mycp">{{item.text3}}</p>
+                <p class="small mycp">{{item.text4}}</p>
+                <button class="watchbtn px-4 py-2 small fw-bold">VIEW MORE</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Top Collection/ Trending Products   -->
+<div class="mt-5">
+    <div class="cusdiv d-flex flex-column align-items-center">
+        <h1 class="fs-2 fw-bold ">TREN<span class=" border-bottom border-2 border-danger">DING PR</span>ODUCT</h1>
+    </div>
+</div>
+<div class="container-fluid  d-flex justify-content-evenly   border-1 px-5 my-5">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3  row-cols-lg-4">
+        @for(item of trendwatch; track item.id;){
+        <div class="d-flex flex-column ">
+            <div class="container1 mx-2 mycp position-relative maindiv" style="background-color: #F8F8F8;">
+                <div class="rounded-5 bg-danger d-flex  align-content-center align-items-center  position-absolute ms-2"
+                    style="width: 38px; height: 38px; top:15px">
+                    <small class="small text-white fw-bold ms-1">NEW</small>
+                </div>
+                <div class="image-container">
+                    <img src="{{item.mainimg}}" alt="Image 1" class="main-image">
+                </div>
+                <div class="d-flex gap-3 justify-content-center align-content-center rounded-5  position-absolute myicons bg-white px-3"
+                    style="bottom: 45px; right:40px; box-shadow: 0 0 12px 0 #dddddd;">
+                    <fa-icon [icon]="cart" class="mt-3  myfaicon"></fa-icon>
+                    <fa-icon [icon]="heart" class="mt-3  myfaicon"></fa-icon>
+                    <fa-icon [icon]="search" class="mt-3  myfaicon"></fa-icon>
+                    <fa-icon [icon]="compare" class="mt-3  myfaicon"></fa-icon>
+                </div>
+            </div>
+            <div class="mx-2  text-center ">
+                <div class="d-flex justify-content-center ">
+                    <fa-icon [icon]="star" class="text-warning small"></fa-icon>
+                    <fa-icon [icon]="star" class="text-warning small"></fa-icon>
+                    <fa-icon [icon]="star" class="text-warning small"></fa-icon>
+                    <fa-icon [icon]="star" class="text-warning small"></fa-icon>
+                    <fa-icon [icon]="star" class="text-warning small"></fa-icon>
+                </div>
+                <p class="fs-6 text-muted mycp ">{{item.name}}</p>
+                <div class="" style="margin-top: -20px;">
+                    <span class="fs-5 fw-bold">{{item.newprice}} </span>&nbsp; <span
+                        class="small text-muted">{{item.oldprice}}</span>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>
+
+<!-- three images -->
+<div class="container border threeimages">
+    <!-- <div class="d-flex justify-content-between gap-3 "> -->
+    <div class="row row-cols-1 gap-3  gap-md-0 row-cols-md-4">
+        <div class=" col-md-4  text-start mycp mindiv">
+            <p class="text-white fw-bold fs-6 mt-5 ms-4">MININUM 10% OFF</p>
+            <p class="text-white fw-bold fs-3 ms-4" style="margin-top: -15px;">NEW WATCH</p>
+
+        </div>
+        <div class="col-md-4 mycp d-none d-md-block">
+            <img src="../../../assets/images/watch/watch13.jpg" class="w-100 " alt="">
+        </div>
+        <div class="col-md-4 mycp mindivtwo">
+            <p class="text-white fw-bold fs-6 mt-5 ms-4">MININUM 10% OFF</p>
+            <p class="text-white fw-bold fs-3 ms-4" style="margin-top: -15px;">NEW WATCH</p>
+        </div>
+    </div>
+</div>
+
+<!-- special Watch  -->
+<div class="mt-4  mt-md-5">
+    <div class="cusdiv d-flex flex-column align-items-center">
+        <h1 class="fs-2 fw-bold ">SPECIAL <span class=" border-bottom border-2 border-danger">PROD</span>UCTS</h1>
+    </div>
+</div>
+
+<div class="mt-md-5 px-5 ">
+    <div class="d-flex flex-column flex-sm-row specialproducts">
+        <div class="col-md-4  ">
+            <div class="d-flex  align-items-center ">
+                <img src="../../../assets/images/watch/watch8.jpg " class="img-fluid border-0   w-75   mycp" alt="">
+                <div class="mx-2  text-center d-block d-sm-none d-md-block">
+                    <div class="d-flex justify-content-center ">
+                        <fa-icon [icon]="star" class="text-warning small"></fa-icon>
+                        <fa-icon [icon]="star" class="text-warning small"></fa-icon>
+                        <fa-icon [icon]="star" class="text-warning small"></fa-icon>
+                        <fa-icon [icon]="star" class="text-warning small"></fa-icon>
+                        <fa-icon [icon]="star" class="text-warning small"></fa-icon>
+                    </div>
+                    <p class="fs-6 text-muted mycp ">Watch 1</p>
+                    <div class="" style="margin-top: -20px;">
+                        <span class="fs-5 fw-bold">$156.00 </span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="d-flex align-items-center  ">
+                <img src="../../../assets/images/watch/watch9.jpg" class="img-fluid  mycp w-75" alt="">
+                <div class="mx-2  text-center d-block d-sm-none d-md-block">
+                    <div class="d-flex justify-content-center ">
+                        <fa-icon [icon]="star" class="text-warning small"></fa-icon>
+                        <fa-icon [icon]="star" class="text-warning small"></fa-icon>
+                        <fa-icon [icon]="star" class="text-warning small"></fa-icon>
+                        <fa-icon [icon]="star" class="text-warning small"></fa-icon>
+                        <fa-icon [icon]="star" class="text-warning small"></fa-icon>
+                    </div>
+                    <p class="fs-6 text-muted mycp ">Watch 2</p>
+                    <div class="" style="margin-top: -20px;">
+                        <span class="fs-5 fw-bold">$207.00 </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=" col-md-4  text-center midpic ">
+            <img src="../../../assets/images/watch/watch15.jpg" class="img-fluid w-75 mycp midpic" alt="">
+            <div class="d-flex gap-3 justify-content-center align-content-center rounded-5  position-absolute myicons bg-white px-3"
+                style=" margin-left: 130px; margin-top: -50px; box-shadow: 0 0 12px 0 #dddddd;">
+                <fa-icon [icon]="cart" class="mt-3 mycp myfaicon"></fa-icon>
+                <fa-icon [icon]="heart" class="mt-3 mycp  myfaicon"></fa-icon>
+                <fa-icon [icon]="search" class="mt-3 mycp myfaicon"></fa-icon>
+                <fa-icon [icon]="compare" class="mt-3 mycp myfaicon"></fa-icon>
+            </div>
+            <div class="mx-2  text-center mt-4 ">
+                <div class="d-flex justify-content-center ">
+                    <fa-icon [icon]="star" class="text-warning small"></fa-icon>
+                    <fa-icon [icon]="star" class="text-warning small"></fa-icon>
+                    <fa-icon [icon]="star" class="text-warning small"></fa-icon>
+                    <fa-icon [icon]="star" class="text-warning small"></fa-icon>
+                    <fa-icon [icon]="star" class="text-warning small"></fa-icon>
+                </div>
+                <p class="fs-6 text-muted mycp ">Watch 5</p>
+                <div class="" style="margin-top: -20px;">
+                    <span class="fs-5 fw-bold">$210.00 </span>&nbsp; <span class="small text-muted">$325.00</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="d-flex align-items-center">
+                <img src="../../../assets/images/watch/watch10.jpg" class="img-fluid mycp  w-75" alt="">
+                <div class="mx-2  text-center d-block d-sm-none d-md-block">
+                    <div class="d-flex justify-content-center ">
+                        <fa-icon [icon]="star" class="text-warning small"></fa-icon>
+                        <fa-icon [icon]="star" class="text-warning small"></fa-icon>
+                        <fa-icon [icon]="star" class="text-warning small"></fa-icon>
+                        <fa-icon [icon]="star" class="text-warning small"></fa-icon>
+                        <fa-icon [icon]="star" class="text-warning small"></fa-icon>
+                    </div>
+                    <p class="fs-6 text-muted mycp ">Watch 3</p>
+                    <div class="" style="margin-top: -20px;">
+                        <span class="fs-5 fw-bold">$356.00 </span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="d-flex align-items-center">
+                <img src="../../../assets/images/watch/watch11.jpg" class="img-fluid  mycp  w-75" alt="">
+                <div class="mx-2  text-center d-block d-sm-none d-md-block">
+                    <div class="d-flex justify-content-center ">
+                        <fa-icon [icon]="star" class="text-warning small"></fa-icon>
+                        <fa-icon [icon]="star" class="text-warning small"></fa-icon>
+                        <fa-icon [icon]="star" class="text-warning small"></fa-icon>
+                        <fa-icon [icon]="star" class="text-warning small"></fa-icon>
+                        <fa-icon [icon]="star" class="text-warning small"></fa-icon>
+                    </div>
+                    <p class="fs-6 text-muted mycp ">Watch 4</p>
+                    <div class="" style="margin-top: -20px;">
+                        <span class="fs-5 fw-bold">$466.00 </span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- blogs watch   -->
+<div class="mt-md-5" style="background: #f1f5f4;">
+    <div class="mt-4 mt-sm-4 mt-md-5 pt-sm-5">
+        <div class="cusdiv d-flex flex-column align-items-center">
+            <p class="mytext fs-5"></p>
+            <h1 class="fs-2 fw-bold " style="margin-top: -10px;">RECE<span class=" border-bottom border-2 border-danger">NT STO</span>RY</h1>
+        </div>
+    </div>
+
+    <div class="container-fluid   mt-4 mb-4">
+        <div class="d-flex  flex-wrap px-5" style="width: 100%; margin: auto;">
+            @for(item of watchblog; track item){
+            <div class="col-sm-6 col-md-4 myblogs">
+                <div class="mycp">
+                    <img src={{item.img}} alt="" width="90%">
+                </div>
+                <div class="text-center mt-3">
+                    <p class="mytext  fw-bold mycp">{{item.date}}</p>
+                    <p class=" fw-bold mycp " style="margin-top: -10px;">LOREM IPSUM DOLOR SIT <br> CONSECTETUER
+                        ADISPIDING
+                        ELIT
+                    </p>
+                    <hr style="width: 20%;margin: auto;">
+
+                    <p class="text-muted">by: John Dio, 2 Comment</p>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</div>
+
+<!-- Delivery  -->
+<app-delivery></app-delivery>
