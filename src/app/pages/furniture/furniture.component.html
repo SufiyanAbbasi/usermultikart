@@ -5,7 +5,7 @@
                 <img src="assets/images/furniture/fur1.jpg" class="d-block w-100" alt="...">
                 <div class="resslider position-absolute text-start text-sm-center ">
                     <p class=" small fs-6 text-muted fw-bolder " style="letter-spacing: 6px;">Furniture Sofa</p>
-                    <h1 class=" display-4 fw-bold">HARMONY SOFA</h1>
+                    <h1 class=" display-4 text-black  fw-bold">HARMONY SOFA</h1>
                     <button type="button" class="mybtn btn rounded-0 mt-2  px-3 py-2">SHOP NOW</button>
                 </div>
             </div>
@@ -13,7 +13,7 @@
                 <img src="assets/images/furniture/fur2.jpg" class="d-block w-100" alt="...">
                 <div class="resslider position-absolute text-start text-sm-center ">
                     <p class=" small fs-6 text-muted fw-bolder " style="letter-spacing: 6px;">Furniture Sofa</p>
-                    <h1 class=" display-4 fw-bold">HARMONY SOFA</h1>
+                    <h1 class=" display-4 text-black  fw-bold">HARMONY SOFA</h1>
                     <button type="button" class="mybtn btn rounded-0 mt-2  px-3 py-2">SHOP NOW</button>
                 </div>
             </div>
@@ -55,5 +55,68 @@
                 <p class="fs-3 " style="margin-top: -20px;">CHAIR</p>
             </div>
         </div>
+    </div>
+</div>
+
+<!-- Exclusive Products Special Products via routerLink Children Path  -->
+<div class="mt-1 mt-sm-1 mt-md-5">
+    <div class="cusdiv d-flex flex-column align-items-center">
+        <p class=" fs-5" style="color: #D4B196;">Exclusive Products</p>
+        <h1 class="fs-2 fw-bold ">SPECIAL <span class=" " style="border-bottom : 2px solid  #D4B196; ;">PR</span>ODUCT</h1>
+    </div>
+</div>
+<div class="d-flex  justify-content-center mt-3">
+    <ul class="d-flex gap-5 list-unstyled fs-6">
+        <div class="d-flex flex-column flex-md-row gap-1 gap-md-5">
+            <li class="mycp fw-bold " routerLink="onsalefur" routerLinkActive="active">ON SALE</li>
+            <li class="mycp fw-bold " routerLink="newarrivalfur" routerLinkActive="active">NEW ARRIVAL</li>
+        </div>
+        <div class="d-flex flex-column flex-md-row gap-1 gap-md-5">
+            <li class="mycp fw-bold " routerLink="bestsellerfur" routerLinkActive="active">BEST SELLER</li>
+        </div>
+    </ul>
+</div>
+<router-outlet></router-outlet>
+
+<!-- Interior Design background image   -->
+<!-- fashion trend / Foodmarket   -->
+<div class="main-div">
+    <div class="bgimg">
+
+    </div>
+    <div class="w-50 text-center maintext">
+        <h1 class="display-1  fw-bold mytext">2018</h1>
+        <h2 class="display-5 fw-bold">INTERIOR DESIGN IN HOME</h2>
+        <p class="fs-4 text-secondary fw-bold " style="letter-spacing: 8px;">SPECIAL OFFER</p>
+    </div>
+</div>
+
+<!-- Furniture Blogs Section  -->
+<div class="mt-4 mt-sm-4 mt-md-5">
+    <div class="cusdiv2 d-flex flex-column align-items-center">
+        <p class=" fs-5">Recent Story</p>
+        <h1 class="fs-2 fw-bold " style="margin-top: -10px;">FROM<span style="border-bottom: 2px solid #D4B196">
+                THE</span> BLOG</h1>
+    </div>
+</div>
+
+<div class="container-fluid   mt-4 mb-4">
+    <div class="d-flex  flex-wrap px-5" style="width: 100%; margin: auto;">
+        @for(item of furnitureblog; track item){
+        <div class="col-sm-6 col-md-4 myblogs" >
+            <div class="mycp">
+                <img src={{item.img}} alt="" width="90%">
+            </div>
+            <div class="text-center mt-3">
+                <p class=" fw-bold mycp" style="color: #D4B196;">{{item.date}}</p>
+                <p class=" fw-bold mycp " style="margin-top: -10px;">LOREM IPSUM DOLOR SIT <br> CONSECTETUER ADISPIDING
+                    ELIT
+                </p>
+                <hr style="width: 20%;margin: auto;">
+
+                <p class="text-muted">by: John Dio, 2 Comment</p>
+            </div>
+        </div>
+        }
     </div>
 </div>

@@ -1,4 +1,4 @@
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { BestsellersComponent } from './shared/subspecialproducts/bestsellers/bestsellers.component';
 import { NewproductsComponent } from './shared/subspecialproducts/newproducts/newproducts.component';
 import { FeaturedproductComponent } from './shared/subspecialproducts/featuredproduct/featuredproduct.component';
@@ -10,23 +10,39 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { VegetableComponent } from './pages/vegetable/vegetable.component';
 import { WatchComponent } from './pages/watch/watch.component';
 import { FurnitureComponent } from './pages/furniture/furniture.component';
+import { OnsalefurnitureComponent } from './shared/subfurnitureprod/onsalefurniture/onsalefurniture.component';
+import { NewfurnitureComponent } from './shared/subfurnitureprod/newfurniture/newfurniture.component';
+import { BestfurnitureComponent } from './shared/subfurnitureprod/bestfurniture/bestfurniture.component';
+import { FlowerComponent } from './pages/flower/flower.component';
+
 
 export const routes: Routes = [
-    {path: '', component:LoginComponent},
-    {path: 'login', component:LoginComponent},
-    {path: 'dashboard', component:DashboardComponent},
-    {path: 'vegetable', component:VegetableComponent},
-    {path: 'watch', component:WatchComponent},
-    {path: 'furniture', component:FurnitureComponent},
+
+    { path: '', component: LoginComponent },
+    { path: 'login', component: LoginComponent },
+    // { path: 'dashboard', component: DashboardComponent },
+    { path: 'vegetable', component: VegetableComponent },
+    { path: 'watch', component: WatchComponent },
+    { path: 'flower', component: FlowerComponent },
     {
         path: 'dashboard',
         component: DashboardComponent,
         children: [
-            { path: 'newproducts', component: NewproductsComponent,  },
-            { path: '', component: NewproductsComponent,  },
+            { path: '', component: NewproductsComponent, },
+            { path: 'newproducts', component: NewproductsComponent, },
             { path: 'bestseller', component: BestsellersComponent },
             { path: 'featuredproducts', component: FeaturedproductComponent },
             { path: 'onsale', component: OnsaleComponent },
+        ],
+    },
+    {
+        path: 'furniture',
+        component: FurnitureComponent,
+        children: [
+            { path: '',  component:OnsalefurnitureComponent},
+            { path: 'onsalefur', component: OnsalefurnitureComponent },
+            { path: 'newarrivalfur', component: NewfurnitureComponent },
+            { path: 'bestsellerfur', component: BestfurnitureComponent },
         ],
     },
 

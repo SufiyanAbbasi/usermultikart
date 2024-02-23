@@ -1,12 +1,12 @@
 /* Slider   */
 
 .mybtn {
-    background-color: #D4B196;
+    background-color: #FA869B;
     color: white;
 }
 
 .mybtn:hover {
-    border: 2px solid#D4B196;
+    border: 2px solid#FA869B;
     background: white;
     color: black;
 }
@@ -32,15 +32,16 @@
     width: 45%;
 }
 
-.resdiv:hover{
+.resdiv:hover {
     background-color: #f0f0f0;
-  padding: 2px;
-  margin: 2px;
-  transition: transform 0.5s ease-in-out;
+    padding: 2px;
+    margin: 2px;
+    transition: transform 0.5s ease-in-out;
 }
+
 .resdiv:hover {
     transform: scale(1);
-  }
+}
 
 .imgtxt h1 {
     margin-top: -20px;
@@ -52,10 +53,10 @@
         left: 2%;
     }
 
-     .resslider h1 {
+    .resslider h1 {
         /* margin-left: 20%; */
         font-size: 1.4rem;
-    } 
+    }
 }
 
 @media screen and (max-width:575px) {
@@ -97,92 +98,126 @@
         font-size: smaller;
         width: 120px;
     }
+
     .resdiv {
         width: 95%;
         /* margin: auto; */
         margin-top: 20px;
     }
- 
 }
 
-/* three images  */
-.threeimages2 img:hover{
-    transform: scale(1.01);
+/* two images   */
+.twoimages img:hover {
+    transform: scale(1.04);
 }
 
-/* routerlink active  */
-.active{
-    color: #D4B196;
+/* <!-- Special Product  / Best Selling Product Flower  --> */
+/* icons on div  */
+.midpic:hover .myfaicon{
+    display: block;
+  }
+  .specialproducts img:hover{
+    transform: scale(1.05);
+    transition: all 0.5s ease;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .cusdiv .myp {
+      width: 80%;
+    }
+  
+  }
+  @media screen and (max-width: 450px) {
+  
+    .main-image {
+      flex: 1;
+      max-width: 170px;
+      transition: transform 0.3s ease;
+    }
+  
+  }
+.myfaicon {
+    color: grey;
+    display: none;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.myfaicon:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.myfaicon:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.myfaicon:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.myfaicon:nth-child(4) {
+    animation-delay: 0.2s;
+}
+
+.myfaicon:hover {
+    color: #fb4b3a;
+
+}
+
+.maindiv:hover .myfaicon {
+    display: block;
+}
+
+/* Trending Products -items flowers */
+.cusdiv h1 {
+    margin-top: -15px;
+    letter-spacing: 1px;
+  }
+  
+  .cusdiv .myp {
+    width: 39%;
+  }
+  
+  /* Three Images div  */
+
+  .image-container {
+    display: flex;
+    align-items: center;
+    /* position: relative; */
+    height: 100%;
+  }
+  
+  .main-image {
+    flex: 1;
+    max-width: 270px;
+    transition: transform 0.3s ease;
   }
   
 
-  /* Interior Design Bg Image  */
-  /* Fashtrend - Foodmarket  */
-  
-  .main-div{
-    position: relative;
-    width: 100%;
-    height: 100vh;
-}
-.bgimg{
-    background-image: url("../../../assets/images/furniture/furbg.jpg");
-    background-size: cover;
-    background-position: center;
-    position: absolute;
-    background-attachment: fixed;
-    width: 100%;
-    height: 100%;
-}
-.maintext{
-     position: absolute;
-     top: 180px;
-     left: 20px;
-} 
-
-.maintext h1{
-    color: #D4B196;
-}
-@media screen and (max-width: 700px){
-    .bgimg{
-        height: 70%;
-    }
-    .maintext{
-        position: absolute;
-        /* margin-top: 100px; */
-        top: 70px;
-        left: 20px;
-    } 
-}
-@media screen and (max-width: 500px){
-    .bgimg{
-        height: 60%;
-    }
-    .maintext{
-        position: absolute;
-        top: 30px;
-        left: 40px;
-    } 
-}
-
-
-/* blogs  */
-/* Blogs   */
-.cusdiv2 p{
-    color: #D4B196;
-}
-.myblogs .mycp img {
+/* flower Blogs   + background image */
+.flowerblogs .mycp img {
     transition: opacity 0.3s ease-in-out,
      #ff4c3b 0.3s ease-in-out; 
     background-color: transparent;
   } 
-
   
-  .myblogs .mycp:hover img {
+  .flowerblogs .mycp:hover img {
     opacity: 0.5; /* Slightly reduce opacity on hover */
     background-color: transparent; /* Set pink color with semi-transparency */
   }
-  
-  .myblogs .mycp:hover img {
+
+  .flowerblogs .mycp:hover img {
     opacity: 1; /* Start with full opacity */
     background-color: transparent; /* Transparent background */
     animation: colorChange 1s steps(4, end); /* Four-step animation */
@@ -206,3 +241,26 @@
       background-color: #ff4c3b; /* Maintain final state */
     }
   }
+  
+
+.bgimg{
+    background-image: url("../../../assets/images/flower/flower14.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (max-width: 700px){
+    .bgimg{
+        height: 100%;
+    }
+ 
+}
+@media screen and (max-width: 500px){
+    .bgimg{
+        height: 100%;
+    }
+
+}
