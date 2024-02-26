@@ -1,0 +1,7 @@
+/* three images  */
+.threeimages2 img:hover{
+    transform: scale(1.01);
+}
+ .active{
+    color: #6D7E87;;
+ }

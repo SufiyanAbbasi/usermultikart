@@ -1,0 +1,259 @@
+/* Slider   */
+
+.mybtn {
+    background-color: #F0B54D;
+    color: white;
+}
+
+.mybtn:hover {
+    border: 2px solid#F0B54D;
+    background: white;
+    color: black;
+}
+
+.resslider {
+    top: 30%;
+    left: 10%;
+}
+
+.imgtxt {
+    position: absolute;
+    top: 35%;
+    left: 62%;
+}
+
+.imgtxt2 {
+    position: absolute;
+    top: 35%;
+    left: 48%;
+}
+
+.resdiv {
+    width: 45%;
+}
+
+.resdiv:hover {
+    background-color: #f0f0f0;
+    padding: 2px;
+    margin: 2px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.resdiv:hover {
+    transform: scale(1);
+}
+
+.imgtxt h1 {
+    margin-top: -20px;
+}
+
+@media screen and (max-width:600px) {
+    .resslider {
+        top: 5%;
+        left: 2%;
+    }
+
+    .resslider h1 {
+        /* margin-left: 20%; */
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (max-width:575px) {
+    .resdiv {
+        width: 80%;
+        margin: auto;
+        margin-top: 20px;
+    }
+
+    .resdiv img {
+        height: 170px;
+    }
+
+    .imgtxt {
+        position: absolute;
+        top: 25%;
+        left: 62%;
+    }
+
+    .imgtxt2 {
+        position: absolute;
+        top: 25%;
+        left: 48%;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .resslider {
+        top: 2%;
+        left: 1%;
+    }
+
+    .resslider h1 {
+        /* margin-left: 20%; */
+        font-size: 1.1rem;
+    }
+
+    .mybtn {
+        font-size: smaller;
+        width: 120px;
+    }
+
+    .resdiv {
+        width: 95%;
+        /* margin: auto; */
+        margin-top: 20px;
+    }
+}
+
+/* Delivery and abuot us  */
+.mysvg path{
+    fill: #F0B54D;
+}
+.mypara:hover{
+    color: #F0B54D;
+}
+
+.mycont{
+    border: 1px solid rgb(240, 235, 235);  
+}
+
+@media screen and (max-width:550px){
+    .mycont{
+      border: none;
+    }
+    .aboutus img{
+        width: 70%;
+    }
+    
+}
+
+/* Top Collection  / special offer / New Products */
+.cusdiv h1 {
+    margin-top: -15px;
+    letter-spacing: 1px;
+  }
+  
+  .cusdiv .myp {
+    width: 39%;
+  }
+  
+  /* Three Images div  */
+  .container1 {
+    /* width: 20%; */
+    /* height: 300px; */
+    /* border: 2px solid grey; */
+    overflow: hidden;
+    /* to prevent images from overflowing the container */
+  }
+  
+  .image-container {
+    display: flex;
+    align-items: center;
+    /* position: relative; */
+    height: 100%;
+  }
+  
+  .main-image {
+    flex: 1;
+    max-width: 270px;
+    transition: transform 0.3s ease;
+  }
+  
+
+  /* icons on div  */
+  .myfaicon {
+    color: grey;
+    display: none;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+  }
+  
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .myfaicon:nth-child(1) {
+    animation-delay: 0.2s;
+  }
+  
+  .myfaicon:nth-child(2) {
+    animation-delay: 0.3s;
+  }
+  
+  .myfaicon:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  
+  .myfaicon:nth-child(4) {
+    animation-delay: 0.5s;
+  }
+  
+  .myfaicon:hover {
+    color: #fb4b3a;
+  
+  }
+  
+  .maindiv:hover .myfaicon {
+    display: block;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .cusdiv .myp {
+      width: 80%;
+    }
+  
+  }
+  @media screen and (max-width: 450px) {
+  
+    .main-image {
+      flex: 1;
+      max-width: 170px;
+      transition: transform 0.3s ease;
+    }
+  
+  }
+
+/* Blogs   */
+.mycp img {
+  transition: opacity 0.3s ease-in-out,
+   #ff4c3b 0.3s ease-in-out; 
+  background-color: transparent;
+} 
+
+.mycp:hover img {
+  opacity: 0.5; /* Slightly reduce opacity on hover */
+  background-color: transparent; /* Set pink color with semi-transparency */
+}
+
+.mycp:hover img {
+  opacity: 1; /* Start with full opacity */
+  background-color: transparent; /* Transparent background */
+  animation: colorChange 1s steps(4, end); /* Four-step animation */
+}
+
+@keyframes colorChange {
+  0% {
+    opacity: 1;
+    background-color: transparent;
+  }
+  25% {
+    opacity: 0.2;
+    background-color: #ff4c3b; /* Intermediate pink color */
+  }
+  50% {
+    opacity: 0.4;
+    background-color: #ff4c3b; /* Final pink color */
+  }
+  100% {
+    opacity:1;
+    background-color: #ff4c3b; /* Maintain final state */
+  }
+}

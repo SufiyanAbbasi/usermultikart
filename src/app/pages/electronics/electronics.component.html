@@ -1,0 +1,54 @@
+<!-- Two column with three images  -->
+<div class="container">
+    <div class="d-flex flex-column flex-md-row  gap-4">
+        <div class="col-md-7">
+            <img src="../../../assets/images/electronics/el1.jpg"  class="img-fluid" alt="">
+        </div>
+        <div class="col-md-5 d-flex flex-column gap-4">
+            <img src="../../../assets/images/electronics/el2.jpg" class="img-fluid mycp" alt="">
+            <img src="../../../assets/images/electronics/el3.jpg" class="img-fluid mycp" alt="">
+        </div>
+    </div>
+</div>
+
+<!-- Three images 
+ -->
+ <div class="container threeimages2  mt-4">
+    <div class="row row-cols-sm-1 gap-2 gap-lg-0 ">
+        <div class="col-md-4 position-relative mycp">
+            <img src="../../../assets/images/electronics/el4.jpg" class=" " style="width: 95%;" alt="">
+            <div class="position-absolute fw-bold " style="top: 20%; right: 15%;">
+                <p style="color: #6D7E87;">10% Off</p>
+                <p class="fs-3 " style="margin-top: -20px;">SPEAKER</p>
+            </div>
+        </div>
+        <div class="col-md-4  position-relative mycp">
+            <img src="../../../assets/images/electronics/el5.jpg" class="" style="width: 95%;" alt="">
+            <div class="position-absolute fw-bold " style="top: 20%; right: 15%;">
+                <p style="color: #6D7E87;">10% Off</p>
+                <p class="fs-3 " style="margin-top: -20px;">EAR PLUG</p>
+            </div>
+        </div>
+        <div class="col-md-4  position-relative mycp">
+            <img src="../../../assets/images/electronics/el6.jpg"class="" style="width: 95%;" alt="">
+            <div class="position-absolute fw-bold " style="top: 20%; right: 15%;">
+                <p style="color: #6D7E87;">10% Off</p>
+                <p class="fs-3 " style="margin-top: -20px;">BEST DEAL</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Exclusive Products Special Products via routerLink Children Path  -->
+
+<div class="d-flex  justify-content-center " style="margin-top: 80px;">
+    <ul class="d-flex gap-5 list-unstyled fs-6">
+        <div class="d-flex flex-column flex-md-row gap-1 gap-md-5">
+            <li class="mycp" routerLink="bestsellerelec" style="letter-spacing: 1px;" routerLinkActive="active">BEST SELLER</li>
+            <li class="mycp " routerLink="onsaleelec" style="letter-spacing: 1px;" routerLinkActive="active">ON SALE</li>
+        </div>
+    </ul>
+</div>
+<div class="" style="margin-top: -40px;">
+<router-outlet></router-outlet>
+</div>

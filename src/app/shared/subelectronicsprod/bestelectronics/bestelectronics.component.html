@@ -1,38 +1,36 @@
 <div class="container-fluid  d-flex justify-content-evenly   border-1 px-5 my-5">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3  row-cols-lg-4">
-        @for(item of bestsellerfurniture; track item.id;){
+    @for(item of bestsellerelectronics; track item.id;){
         <div class="d-flex flex-column mt-4">
             <div class="container1 mx-2 mycp position-relative maindiv" style="background-color: #F8F8F8;">
-                <div class="rounded-5 d-flex  align-content-center align-items-center  position-absolute ms-2"
-                    style="width: 38px; height: 38px; top:15px; background-color: #D4B196;">
-                    <small class="small text-white fw-bold ms-1">NEW</small>
+                <div class="rounded-5 d-flex  align-content-center align-items-center  position-absolute ms-2" style="width: 38px; height: 38px; top:15px; background-color: #D4B196;">
+                    <small class="small text-white fw-bold ms-1" >NEW</small>
                 </div>
                 <div class="image-container">
                     <img src="{{item.mainimg}}" style="margin-left: -20px;" alt="Image 1" class="main-image">
                 </div>
                 <div class="d-flex flex-column position-absolute myicons" style="bottom: 70px; right:10px">
-                    <fa-icon [icon]="cart" class="mt-3  myfaicon"></fa-icon>
+                    <fa-icon [icon]="cart"  class="mt-3  myfaicon"></fa-icon>
                     <fa-icon [icon]="heart" class="mt-3  myfaicon"></fa-icon>
                     <fa-icon [icon]="search" class="mt-3  myfaicon"></fa-icon>
                     <fa-icon [icon]="compare" class="mt-3  myfaicon"></fa-icon>
                 </div>
             </div>
-            <div class="mx-2">
-                <div class="d-flex">
+            <div class="mx-2 text-center ">
+                <div class="d-flex justify-content-center ">
                     <fa-icon [icon]="star" class="text-warning small"></fa-icon>
                     <fa-icon [icon]="star" class="text-warning small"></fa-icon>
                     <fa-icon [icon]="star" class="text-warning small"></fa-icon>
                     <fa-icon [icon]="star" class="text-warning small"></fa-icon>
                     <fa-icon [icon]="star" class="text-warning small"></fa-icon>
                 </div>
-                <p class="fs-6 text-muted mycp">{{item.dress}}</p>
+                <p class="fs-6 text-muted mycp">{{item.name}}</p>
                 <div class="" style="margin-top: -20px;">
-                    <span class="fs-5 fw-bold">{{item.newprice}} </span>&nbsp; <span
-                        class="small text-muted">{{item.oldprice}}</span>
+                    <span class="fs-5 fw-bold">{{item.newprice}} </span>&nbsp; <span class="small text-muted">{{item.oldprice}}</span>
                 </div>
-
+             
             </div>
         </div>
-        }
-    </div>
+    }
+</div>
 </div>

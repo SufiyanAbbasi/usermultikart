@@ -1,0 +1,149 @@
+<!-- Slider   -->
+<div>
+    <div id="carouselExampleAutoplaying" class="carousel slide w-100  h-100 " data-bs-ride="carousel">
+        <div class="carousel-inner ">
+            <div class="carousel-item active  w-100  h-100 position-relative ">
+                <img src="../../../assets/images/gym/gym1.jpg" class="d-block w-100" alt="...">
+                <div class="resslider position-absolute text-end  text-sm-end ">
+                    <p class=" small fs-6 text-white fw-bolder text-end  " style="letter-spacing: 6px;">Summer Sale</p>
+                    <h1 class=" display-4  text-white fw-bold">PROTIEN POWDER</h1>
+                    <button type="button" class="mybtn btn rounded-0 mt-2  px-3 py-2 ">SHOP NOW</button>
+                </div>
+            </div>
+            <div class="carousel-item ">
+                <img src="../../../assets/images/gym/gym2.jpg" class="d-block w-100" alt="...">
+                <div class="resslider position-absolute text-end  text-sm-end ">
+                    <p class=" small fs-6 text-white fw-bolder text-end  " style="letter-spacing: 6px;">Summer Sale</p>
+                    <h1 class=" display-4  text-white fw-bold">PROTIEN POWDER</h1>
+                    <button type="button" class="mybtn btn rounded-0 mt-2  px-3 py-2 ">SHOP NOW</button>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+<!-- Two Images   -->
+<div class="container  px-5 mt-5">
+    <div class="d-flex flex-column flex-sm-row gap-4 twoimages">
+        <div class="col-md-4 mycp position-relative">
+            <img src="assets/images/gym/gym3.jpg" class="img-fluid" alt="">
+            <div class="position-absolute text-white " style="top: 40%;left: 10%;">
+                <p class=" fw-bold fs-5">SAVE 30%</p>
+                <h1 class="display-5 fw-bold" style="margin-top: -20px;">GYM</h1>
+            </div>
+        </div>
+        <div class="col-md-8 mycp position-relative">
+            <img src="assets/images/gym/gym4.jpg" class="img-fluid" alt="">
+            <div class="position-absolute text-white " style="top: 30%;left: 10%;">
+                <p class=" fw-bold fs-5">SAVE 30%</p>
+                <h1 class="display-5  fw-bold" style="margin-top: -20px;">POWDER</h1>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Special offer  top collection   -->
+<div class="mt-1 mt-sm-1 mt-md-5">
+    <div class="cusdiv d-flex flex-column align-items-center">
+        <p class=" fs-5" style="color:  #3D72F1;">Special Offer</p>
+        <h1 class="fs-2 fw-bold ">TOP CO<span class=" " style="border-bottom : 2px solid  #3D72F1;">LLECT</span>ION</h1>
+    </div>
+</div>
+<div class="container-fluid  d-flex justify-content-evenly   border-1 px-5 my-5">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3  row-cols-lg-4">
+        @for(item of bestsellerfurniture; track item.id;){
+        <div class="d-flex flex-column mt-4  rounded-4">
+            <div class="container1 mx-2 mycp position-relative maindiv" style="background-color: #F8F8F8;">
+                <div class="rounded-5 d-flex  align-content-center align-items-center  position-absolute ms-2"
+                    style="width: 38px; height: 38px; top:15px; background-color: #3D72F1;">
+                    <small class="small text-white fw-bold ms-1">NEW</small>
+                </div>
+                <div class="image-container">
+                    <img src="{{item.mainimg}}" style="margin-left: -10px;" alt="Image 1" class="main-image">
+                </div>
+                <div class="d-flex flex-column position-absolute myicons" style="bottom: 70px; right:10px">
+                    <fa-icon [icon]="cart" class="mt-3  myfaicon"></fa-icon>
+                    <fa-icon [icon]="heart" class="mt-3  myfaicon"></fa-icon>
+                    <fa-icon [icon]="search" class="mt-3  myfaicon"></fa-icon>
+                    <fa-icon [icon]="compare" class="mt-3  myfaicon"></fa-icon>
+                </div>
+            </div>
+            <div class="mx-2  text-center">
+                <div class="d-flex justify-content-center ">
+                    <fa-icon [icon]="star" class="text-warning small"></fa-icon>
+                    <fa-icon [icon]="star" class="text-warning small"></fa-icon>
+                    <fa-icon [icon]="star" class="text-warning small"></fa-icon>
+                    <fa-icon [icon]="star" class="text-warning small"></fa-icon>
+                    <fa-icon [icon]="star" class="text-warning small"></fa-icon>
+                </div>
+                <p class="fs-6 text-muted  mycp">{{item.dress}}</p>
+                <div class="" style="margin-top: -20px;">
+                    <span class="fs-5 fw-bold">{{item.newprice}} </span>&nbsp; <span
+                        class="small text-muted">{{item.oldprice}}</span>
+                </div>
+
+            </div>
+        </div>
+        }
+    </div>
+</div>
+
+<!-- Special Offer top collection  with moving background image  -->
+<div class="main-div">
+    <div class="bgimg">
+
+    </div>
+    <div class="  w-50 text-center maintext text-white  ">
+        <!-- <p class="fs-4 d-none d-sm-block  fw-bold " style="color: #ff9944;">CHOOSE WHAT YOU LOVE</p>
+        <h1 class="display-3 fw-bold ">GET UPTO 70% OFF</h1> -->
+        <p class=" fs-5" style="color:  #3D72F1;">Special Offer</p>
+        <h1 class="fs-2 fw-bold ">TOP CO<span class=" " style="border-bottom : 2px solid  #3D72F1;">LLECT</span>ION</h1>
+        <p class=" mypara">Lorem Ipsum is simply dummy text of the printing dustry's standard dum when an
+            unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+
+    </div>
+
+
+</div>
+
+<!-- Blog Section    -->
+<div class="mt-4 mt-sm-4 mt-md-5">
+    <div class="cusdiv d-flex flex-column align-items-center">
+        <p class="fs-5" style="color: #3D72F1;">Recent Story</p>
+        <h1 class="fs-2 fw-bold " style="margin-top: -10px;">FROM<span class=" " style="border-bottom: 2px solid #3D72F1">
+                THE</span> BLOG</h1>
+    </div>
+</div>
+
+<div class="container-fluid blog  mt-4">
+    <div class="d-flex  flex-wrap px-5" style="width: 100%; margin: auto;">
+        @for(item of petblog; track item){
+        <div class="col-sm-6 col-md-4" >
+            <div class="mycp">
+                <img src={{item.img}} alt="" width="90%">
+            </div>
+            <div class="text-start mt-3">
+                <p class="  fw-bold mycp"  style="color: #3D72F1">{{item.date}}</p>
+                <p class=" fw-bold mycp " style="margin-top: -10px;">LOREM IPSUM DOLOR SIT <br> CONSECTETUER ADISPIDING
+                    ELIT
+                </p>
+                <hr style="width: 20%;margin: auto;">
+
+                <p class="text-muted">by: John Dio, 2 Comment</p>
+            </div>
+        </div>
+        }
+    </div>
+</div>  
+
+<app-logos></app-logos>

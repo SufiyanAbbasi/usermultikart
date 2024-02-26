@@ -14,6 +14,12 @@ import { OnsalefurnitureComponent } from './shared/subfurnitureprod/onsalefurnit
 import { NewfurnitureComponent } from './shared/subfurnitureprod/newfurniture/newfurniture.component';
 import { BestfurnitureComponent } from './shared/subfurnitureprod/bestfurniture/bestfurniture.component';
 import { FlowerComponent } from './pages/flower/flower.component';
+import { BeautyComponent } from './pages/beauty/beauty.component';
+import { ElectronicsComponent } from './pages/electronics/electronics.component';
+import { BestelectronicsComponent } from './shared/subelectronicsprod/bestelectronics/bestelectronics.component';
+import { OnsaleelectronicsComponent } from './shared/subelectronicsprod/onsaleelectronics/onsaleelectronics.component';
+import { PetsComponent } from './pages/pets/pets.component';
+import { GymComponent } from './pages/gym/gym.component';
 
 
 export const routes: Routes = [
@@ -24,6 +30,9 @@ export const routes: Routes = [
     { path: 'vegetable', component: VegetableComponent },
     { path: 'watch', component: WatchComponent },
     { path: 'flower', component: FlowerComponent },
+    { path: 'beauty', component: BeautyComponent }, 
+    { path: 'pets', component: PetsComponent }, 
+    { path: 'gym', component: GymComponent }, 
     {
         path: 'dashboard',
         component: DashboardComponent,
@@ -39,10 +48,18 @@ export const routes: Routes = [
         path: 'furniture',
         component: FurnitureComponent,
         children: [
-            { path: '',  component:OnsalefurnitureComponent},
+            { path: '', component: OnsalefurnitureComponent },
             { path: 'onsalefur', component: OnsalefurnitureComponent },
             { path: 'newarrivalfur', component: NewfurnitureComponent },
             { path: 'bestsellerfur', component: BestfurnitureComponent },
+        ],
+    },
+    {
+        path: 'electronics', component: ElectronicsComponent, 
+        children: [
+            { path: '', component: BestelectronicsComponent, },
+            { path: 'bestsellerelec', component:BestelectronicsComponent  },
+            { path: 'onsaleelec', component: OnsaleelectronicsComponent, },
         ],
     },
 
