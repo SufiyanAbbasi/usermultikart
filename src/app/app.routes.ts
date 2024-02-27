@@ -20,6 +20,8 @@ import { BestelectronicsComponent } from './shared/subelectronicsprod/bestelectr
 import { OnsaleelectronicsComponent } from './shared/subelectronicsprod/onsaleelectronics/onsaleelectronics.component';
 import { PetsComponent } from './pages/pets/pets.component';
 import { GymComponent } from './pages/gym/gym.component';
+import { ToolComponent } from './pages/tool/tool.component';
+import { ShoesComponent } from './pages/shoes/shoes.component';
 
 
 export const routes: Routes = [
@@ -33,6 +35,8 @@ export const routes: Routes = [
     { path: 'beauty', component: BeautyComponent }, 
     { path: 'pets', component: PetsComponent }, 
     { path: 'gym', component: GymComponent }, 
+    { path: 'tool', component: ToolComponent }, 
+    { path: 'shoes', component: ShoesComponent }, 
     {
         path: 'dashboard',
         component: DashboardComponent,
