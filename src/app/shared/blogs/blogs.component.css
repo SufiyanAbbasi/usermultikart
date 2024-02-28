@@ -1,35 +1,46 @@
-.mycp img {
-    transition: opacity 0.3s ease-in-out,
-     #ff4c3b 0.3s ease-in-out; 
-    background-color: transparent;
-  } 
-  
-  .mycp:hover img {
-    opacity: 0.5; /* Slightly reduce opacity on hover */
-    background-color: transparent; /* Set pink color with semi-transparency */
-  }
+ .mycp img {
+   transition: opacity 0.3s ease-in-out,
+     #ff4c3b 0.3s ease-in-out;
+   background-color: transparent;
+ }
 
-  .mycp:hover img {
-    opacity: 1; /* Start with full opacity */
-    background-color: transparent; /* Transparent background */
-    animation: colorChange 1s steps(4, end); /* Four-step animation */
-  }
-  
-  @keyframes colorChange {
-    0% {
-      opacity: 1;
-      background-color: transparent;
-    }
-    25% {
-      opacity: 0.2;
-      background-color: #ff4c3b; /* Intermediate pink color */
-    }
-    50% {
-      opacity: 0.4;
-      background-color: #ff4c3b; /* Final pink color */
-    }
-    100% {
-      opacity:1;
-      background-color: #ff4c3b; /* Maintain final state */
-    }
-  }
+ .mycp:hover img {
+   opacity: 0.5;
+   /* Slightly reduce opacity on hover */
+   background-color: transparent;
+   /* Set pink color with semi-transparency */
+ }
+
+ .mycp:hover img {
+   opacity: 1;
+   /* Start with full opacity */
+   background-color: transparent;
+   /* Transparent background */
+   animation: colorChange 1s steps(4, end);
+   /* Four-step animation */
+ }
+
+ @keyframes colorChange {
+   0% {
+     opacity: 1;
+     background-color: transparent;
+   }
+
+   25% {
+     opacity: 0.2;
+     background-color: #ff4c3b;
+     /* Intermediate pink color */
+   }
+
+   50% {
+     opacity: 0.4;
+     background-color: #ff4c3b;
+     /* Final pink color */
+   }
+
+   100% {
+     opacity: 1;
+     background-color: #ff4c3b;
+     /* Maintain final state */
+   }
+ }

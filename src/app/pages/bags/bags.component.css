@@ -1,18 +1,28 @@
 /* Slider  */
 .mybtn {
-    background-color: #3EDFA9;
+    background-color: #F0B54D;
     color: white;
 }
 
 .mybtn:hover {
-    border: 2px solid#3EDFA9;
+    border: 2px solid#F0B54D;
     background: white;
     color: black;
 }
 
+.mybtn2 {
+    border: 2px solid#F0B54D;
+    color: black;
+}
+
+.mybtn2:hover {
+    background-color: #F0B54D;
+    color: white;
+}
+
 .resslider {
     top: 30%;
-    left: 10%;
+    left: 35%;
 }
 
 .imgtxt {
@@ -49,7 +59,7 @@
 @media screen and (max-width:600px) {
     .resslider {
         top: 5%;
-        left: 2%;
+        left: 30%;
     }
 
     .resslider h1 {
@@ -86,7 +96,7 @@
 @media screen and (max-width:400px) {
     .resslider {
         top: 0%;
-        left: 2%;
+        left: 25%;
     }
 
     .resslider h1 {
@@ -97,7 +107,7 @@
 
     .mybtn {
         font-size: smaller;
-        width: 120px;
+        width: 200px;
     }
 
     .resdiv {
@@ -107,23 +117,7 @@
     }
 }
 
-/* Shoes list  */
-.slist:hover {
-    background: #3EDFA9;
-}
-
-.slist:hover img {
-    filter: brightness(0) invert(1);
-}
-
-/* Welcome to multistore
-  */
-.mytwo img:hover {
-    transform: scale(1.03);
-}
-
-/* OUR COLLECTION - SPECIAL PRODUCTS  */
-/* Top Collection  / special offer / New Products */
+/* <!-- new collection- trending products  --> */
 .cusdiv h1 {
     margin-top: -15px;
     letter-spacing: 1px;
@@ -134,13 +128,6 @@
 }
 
 /* Three Images div  */
-.container1 {
-    /* width: 20%; */
-    /* height: 300px; */
-    /* border: 2px solid grey; */
-    overflow: hidden;
-    /* to prevent images from overflowing the container */
-}
 
 .image-container {
     display: flex;
@@ -171,7 +158,7 @@
     }
 
     to {
-        opacity: 0.7;
+        opacity: 1;
     }
 }
 
@@ -180,15 +167,15 @@
 }
 
 .myfaicon:nth-child(2) {
-    animation-delay: 0.3s;
+    animation-delay: 0.2s;
 }
 
 .myfaicon:nth-child(3) {
-    animation-delay: 0.3s;
+    animation-delay: 0.2s;
 }
 
 .myfaicon:nth-child(4) {
-    animation-delay: 0.3s;
+    animation-delay: 0.2s;
 }
 
 .myfaicon:hover {
@@ -200,90 +187,88 @@
     display: block;
 }
 
-@media screen and (max-width: 600px) {
-    .cusdiv .myp {
-        width: 80%;
-    }
+/* Backgound Image and Dog Image  */
 
+.main-div {
+    position: relative;
+    width: 100%;
+    height: 100vh;
 }
 
-@media screen and (max-width: 450px) {
-
-    .main-image {
-        flex: 1;
-        max-width: 170px;
-        transition: transform 0.3s ease;
-    }
-
+.bgimg {
+    background-image: url("../../../assets/images/bags/bgbag.jpg");
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
 }
 
-/* our collection - special products when hover second image shown  */
-.image-container {
-    overflow: hidden;
-
-}
-
-.main-image {
-    flex: 1;
-    max-width: 270px;
-    transition: transform 1.5s ease;
-    transform: translateX(0);
-
-
-}
-
-.secondary-image {
-    flex: 1;
-    max-width: 270px;
-    transition: transform 1.5s ease;
-    transform: translateX(0);
-
-
-}
-
-
-.maindiv:hover .main-image {
-    display: none;
-    transform: translateX(100%);
-}
-
-.maindiv:hover .secondary-image {
-    display: block;
-    transform: translateX(0%);
-
-}
-
-/* <!-- Men-women-kids  --> */
-.hpara {
-    width: 144px;
-    height: 72px;
-    top: 30%;
+.maintext {
+    position: absolute;
+    top: 150px;
     left: 25%;
-    box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.4);
 }
 
-.hpara:hover p {
-    color: #3EDFA9
+@media screen and (max-width: 700px) {
+    .bgimg {
+        height: 80%;
+    }
+
+    .maintext {
+        position: absolute;
+        /* margin-top: 100px; */
+        top: 110px;
+        left: 25%;
+    }
+
+    .main-div h1 {
+        font-size: 1.8rem;
+    }
 }
 
-.threediv:hover {
-    transform: scale(1.02);
+@media screen and (max-width: 500px) {
+    .bgimg {
+        height: 60%;
+    }
+
+    .maintext {
+        position: absolute;
+        top: 60px;
+        left: 25%;
+    }
+
+    .main-div h1 {
+        font-size: 1.2rem;
+    }
+
+    .maintext p {
+        width: 90%;
+    }
+
 }
 
-/* sizes  */
-.myhcont {
-    width: 195px;
-    height: 108px;
-    background-color: white;
-    box-shadow: 0 0 7px 0 rgba(232, 228, 228, 0.4);
+@media screen and (max-width: 380px) {
+    .bgimg {
+        height: 50%;
+    }
+
+    .maintext {
+        position: absolute;
+        top: 50px;
+        left: 25%;
+    }
+
+    .main-div h1 {
+        font-size: 1rem;
+    }
+
+    .maintext p {
+        width: 90%;
+    }
 
 }
-
-.myhcont:hover {
-    background: #3EDFA9;
-    color: white;
-}
-
 /* blogs */
 .shoeblog .mycp img {
     transition: opacity 0.3s ease-in-out,

@@ -82,7 +82,7 @@
     </div>
 </div>
 
-<div class="" style="background: #F5F5F5;">
+<div class="" style="background: #Ffffff;">
     <div class="d-flex justify-content-center mt-5">
         <div class="text-center col-10 col-md-7   ">
             <p class="mt-5 fs-5" style="color: #3EDFA9;">About Us</p>
@@ -122,22 +122,25 @@
     </div>
     <div class="container-fluid  d-flex justify-content-evenly   border-1 px-5 my-5">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3  row-cols-lg-4">
-            @for(item of beautynewprod; track item.id;){
+            @for(item of shoesprod; track item.id;){
             <div class="d-flex flex-column ">
-                <div class="container1 mx-2 mycp position-relative maindiv">
+                <div class="container1 mx-2 mycp position-relative maindiv ">
                     <div class="rounded-5 bg-danger d-flex  align-content-center align-items-center  position-absolute ms-2"
                         style="width: 38px; height: 38px; top:15px">
                         <small class="small text-white fw-bold ms-1">NEW</small>
                     </div>
-                    <div class="image-container">
-                        <!-- <div class="d-flex flex-column" style="margin-top: 90px">
-                            @for(img of item.secondaryimg;track img){
-                            <img src="{{img}}" alt="secondary Images" class="secondary-image">
-                            }
-                        </div> -->
-                        <img src="{{item.mainimg}}" style="margin-left: -0px;" alt="Image 1" class="main-image">
+                    <div class="image-container" (mouseenter)="item.showSecondary = true"
+                        (mouseleave)="item.showSecondary = false">
+                        @if(!item.showSecondary){
+                        <img src="{{item.mainimg}}" alt="Image 1" class="main-image">
+                        }
+                        @if(item.showSecondary){
+                        <img src="{{item.secondaryimg}}" alt="secondary Images" class="secondary-image">
+                        }
                     </div>
-                    <div class="d-flex flex-column position-absolute myicons" style="bottom: 30px; right:10px">
+
+
+                    <div class="d-flex gap-3 position-absolute myicons" style="bottom: 60px; right:60px">
                         <fa-icon [icon]="cart" class="mt-3  myfaicon"></fa-icon>
                         <fa-icon [icon]="heart" class="mt-3  myfaicon"></fa-icon>
                         <fa-icon [icon]="search" class="mt-3  myfaicon"></fa-icon>
@@ -164,3 +167,457 @@
         </div>
     </div>
 </div>
+
+<!-- Men-women-kids  -->
+<section class="container-fluid" style="background-color: #F1F5F4;">
+    <div class="row mx-0 py-4">
+        <div class="threediv col-lg-4 col-md-6 mb-4">
+            <div class="bg-white position-relative">
+                <img src="../../../assets/images/shoes/s19.png" class="img-fluid" alt="">
+                <div class="hpara position-absolute  d-flex justify-content-center align-items-center bg-white mycp">
+                    <p class="fs-3 mt-3 fw-bold">MEN</p>
+                </div>
+            </div>
+        </div>
+        <div class="threediv col-lg-4 col-md-6 mb-4">
+            <div class="bg-white position-relative">
+                <img src="../../../assets/images/shoes/s20.png" class="img-fluid" alt="">
+                <div class="hpara position-absolute  d-flex justify-content-center align-items-center bg-white mycp">
+                    <p class="fs-3 mt-3 fw-bold">WOMEN</p>
+                </div>
+            </div>
+        </div>
+        <div class="threediv col-lg-4 col-md-6 mb-4">
+            <div class="bg-white position-relative">
+                <img src="../../../assets/images/shoes/s21.png" class="img-fluid" alt="">
+                <div class="hpara position-absolute  d-flex justify-content-center align-items-center bg-white mycp">
+                    <p class="fs-3 mt-3 fw-bold">KIDS</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- new-feature-sell-best-product  -->
+<section class="container">
+    <div class="row ">
+        <div class="col-10  col-sm-8  col-md-6 pt-5 col-lg-3 ">
+            <div class="border-bottom ">
+                <div class="d-flex justify-content-between align-items-center ">
+                    <div class="mt-3">
+                        <p class="fw-bold">NEW PRODUCTS </p>
+                    </div>
+                    <div class="d-flex gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mycp" style="width: 13px;" viewBox="0 0 320 512"
+                            (click)="toggleContent()">
+                            <path
+                                d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mycp" style="width: 13px;" viewBox="0 0 320 512"
+                            (click)="toggleContent()">
+                            <path
+                                d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                        </svg>
+                    </div>
+
+                </div>
+            </div>
+            @if(showContent){
+            <div>
+                <div class="d-flex align-items-center justify-content-evenly    ">
+
+                    <img src="../../../assets/images/shoes/s14.jpg" style="width: 35%;" alt="">
+
+                    <div>
+                        <p class="text-muted small">Shoes 1</p>
+                        <p style="margin-top: -15px;"> $60.00</p>
+                    </div>
+                </div>
+                <div class="d-flex mt-4 align-items-center justify-content-evenly    ">
+
+                    <img src="../../../assets/images/shoes/s15.jpg" style="width: 35%;" alt="">
+
+                    <div>
+                        <p class="text-muted small">Shoes 2</p>
+                        <p style="margin-top: -15px;"> $160.00</p>
+                    </div>
+                </div>
+                <div class="d-flex mt-4 align-items-center justify-content-evenly    ">
+
+                    <img src="../../../assets/images/shoes/s16.jpg" style="width: 35%;" alt="">
+
+                    <div>
+                        <p class="text-muted small">Shoes 3</p>
+                        <p style="margin-top: -15px;"> $234.00</p>
+                    </div>
+                </div>
+            </div>
+            }
+            @if(!showContent){
+            <div>
+                <div class="d-flex  align-items-center justify-content-evenly    ">
+
+                    <img src="../../../assets/images/shoes/s18.jpg" style="width: 35%;" alt="">
+
+
+                    <div>
+                        <p class="text-muted small">Shoes 4</p>
+                        <p style="margin-top: -15px;"> $234.00</p>
+                    </div>
+                </div>
+                <div class="d-flex mt-4 align-items-center justify-content-evenly    ">
+
+                    <img src="../../../assets/images/shoes/s17.jpg" style="width: 35%;" alt="">
+
+
+                    <div>
+                        <p class="text-muted small">Shoes 5</p>
+                        <p style="margin-top: -15px;"> $20.00</p>
+                    </div>
+                </div>
+
+                <div class="d-flex mt-4 align-items-center justify-content-evenly    ">
+
+                    <img src="../../../assets/images/shoes/s12.jpg" style="width: 35%;" alt="">
+
+
+                    <div>
+                        <p class="text-muted small">Shoes 6</p>
+                        <p style="margin-top: -15px;"> $134.00</p>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+        <div class="col-10 col-sm-8  col-md-6 pt-5 col-lg-3">
+            <div class="border-bottom ">
+                <div class="d-flex justify-content-between align-items-center ">
+                    <div class="mt-3">
+                        <p class="fw-bold">SELL PRODUCTS </p>
+                    </div>
+                    <div class="d-flex gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mycp" style="width: 13px;" viewBox="0 0 320 512"
+                            (click)="toggleContent1()">
+                            <path
+                                d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mycp" style="width: 13px;" viewBox="0 0 320 512"
+                            (click)="toggleContent1()">
+                            <path
+                                d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                        </svg>
+                    </div>
+
+                </div>
+            </div>
+            @if(showContent1){
+            <div>
+                <div class="d-flex align-items-center justify-content-evenly    ">
+
+                    <img src="../../../assets/images/shoes/s14.jpg" style="width: 35%;" alt="">
+
+                    <div>
+                        <p class="text-muted small">Shoes 1</p>
+                        <p style="margin-top: -15px;"> $60.00</p>
+                    </div>
+                </div>
+                <div class="d-flex mt-4 align-items-center justify-content-evenly    ">
+
+                    <img src="../../../assets/images/shoes/s15.jpg" style="width: 35%;" alt="">
+
+                    <div>
+                        <p class="text-muted small">Shoes 2</p>
+                        <p style="margin-top: -15px;"> $160.00</p>
+                    </div>
+                </div>
+                <div class="d-flex mt-4 align-items-center justify-content-evenly    ">
+
+                    <img src="../../../assets/images/shoes/s16.jpg" style="width: 35%;" alt="">
+
+                    <div>
+                        <p class="text-muted small">Shoes 3</p>
+                        <p style="margin-top: -15px;"> $234.00</p>
+                    </div>
+                </div>
+            </div>
+            }
+            @if(!showContent1){
+            <div>
+                <div class="d-flex  align-items-center justify-content-evenly    ">
+
+                    <img src="../../../assets/images/shoes/s18.jpg" style="width: 35%;" alt="">
+
+
+                    <div>
+                        <p class="text-muted small">Shoes 4</p>
+                        <p style="margin-top: -15px;"> $234.00</p>
+                    </div>
+                </div>
+                <div class="d-flex mt-4 align-items-center justify-content-evenly    ">
+
+                    <img src="../../../assets/images/shoes/s17.jpg" style="width: 35%;" alt="">
+
+
+                    <div>
+                        <p class="text-muted small">Shoes 5</p>
+                        <p style="margin-top: -15px;"> $20.00</p>
+                    </div>
+                </div>
+
+                <div class="d-flex mt-4 align-items-center justify-content-evenly    ">
+
+                    <img src="../../../assets/images/shoes/s12.jpg" style="width: 35%;" alt="">
+
+
+                    <div>
+                        <p class="text-muted small">Shoes 6</p>
+                        <p style="margin-top: -15px;"> $134.00</p>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+        <div class="col-10 col-sm-8  col-md-6 pt-5 col-lg-3">
+            <div class="border-bottom ">
+                <div class="d-flex justify-content-between align-items-center ">
+                    <div class="mt-3">
+                        <p class="fw-bold">FEATURE PRODUCTS </p>
+                    </div>
+                    <div class="d-flex gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mycp" style="width: 13px;" viewBox="0 0 320 512"
+                            (click)="toggleContent2()">
+                            <path
+                                d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mycp" style="width: 13px;" viewBox="0 0 320 512"
+                            (click)="toggleContent2()">
+                            <path
+                                d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                        </svg>
+                    </div>
+
+                </div>
+            </div>
+            @if(showContent2){
+            <div>
+                <div class="d-flex align-items-center justify-content-evenly    ">
+
+                    <img src="../../../assets/images/shoes/s14.jpg" style="width: 35%;" alt="">
+
+                    <div>
+                        <p class="text-muted small">Shoes 1</p>
+                        <p style="margin-top: -15px;"> $60.00</p>
+                    </div>
+                </div>
+                <div class="d-flex mt-4 align-items-center justify-content-evenly    ">
+
+                    <img src="../../../assets/images/shoes/s15.jpg" style="width: 35%;" alt="">
+
+                    <div>
+                        <p class="text-muted small">Shoes 2</p>
+                        <p style="margin-top: -15px;"> $160.00</p>
+                    </div>
+                </div>
+                <div class="d-flex mt-4 align-items-center justify-content-evenly    ">
+
+                    <img src="../../../assets/images/shoes/s16.jpg" style="width: 35%;" alt="">
+
+                    <div>
+                        <p class="text-muted small">Shoes 3</p>
+                        <p style="margin-top: -15px;"> $234.00</p>
+                    </div>
+                </div>
+            </div>
+            }
+            @if(!showContent2){
+            <div>
+                <div class="d-flex  align-items-center justify-content-evenly    ">
+
+                    <img src="../../../assets/images/shoes/s18.jpg" style="width: 35%;" alt="">
+
+
+                    <div>
+                        <p class="text-muted small">Shoes 4</p>
+                        <p style="margin-top: -15px;"> $234.00</p>
+                    </div>
+                </div>
+                <div class="d-flex mt-4 align-items-center justify-content-evenly    ">
+
+                    <img src="../../../assets/images/shoes/s17.jpg" style="width: 35%;" alt="">
+
+
+                    <div>
+                        <p class="text-muted small">Shoes 5</p>
+                        <p style="margin-top: -15px;"> $20.00</p>
+                    </div>
+                </div>
+
+                <div class="d-flex mt-4 align-items-center justify-content-evenly    ">
+
+                    <img src="../../../assets/images/shoes/s12.jpg" style="width: 35%;" alt="">
+
+
+                    <div>
+                        <p class="text-muted small">Shoes 6</p>
+                        <p style="margin-top: -15px;"> $134.00</p>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+        <div class="col-10  col-sm-8 col-md-6 pt-5 col-lg-3">
+            <div class="border-bottom ">
+                <div class="d-flex justify-content-between align-items-center ">
+                    <div class="mt-3">
+                        <p class="fw-bold">BEST PRODUCTS </p>
+                    </div>
+                    <div class="d-flex gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mycp" style="width: 13px;" viewBox="0 0 320 512"
+                            (click)="toggleContent3()">
+                            <path
+                                d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mycp" style="width: 13px;" viewBox="0 0 320 512"
+                            (click)="toggleContent3()">
+                            <path
+                                d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                        </svg>
+                    </div>
+
+                </div>
+            </div>
+            @if(showContent3){
+            <div>
+                <div class="d-flex align-items-center justify-content-evenly    ">
+
+                    <img src="../../../assets/images/shoes/s14.jpg" style="width: 35%;" alt="">
+
+                    <div>
+                        <p class="text-muted small">Shoes 1</p>
+                        <p style="margin-top: -15px;"> $60.00</p>
+                    </div>
+                </div>
+                <div class="d-flex mt-4 align-items-center justify-content-evenly    ">
+
+                    <img src="../../../assets/images/shoes/s15.jpg" style="width: 35%;" alt="">
+
+                    <div>
+                        <p class="text-muted small">Shoes 2</p>
+                        <p style="margin-top: -15px;"> $160.00</p>
+                    </div>
+                </div>
+                <div class="d-flex mt-4 align-items-center justify-content-evenly    ">
+
+                    <img src="../../../assets/images/shoes/s16.jpg" style="width: 35%;" alt="">
+
+                    <div>
+                        <p class="text-muted small">Shoes 3</p>
+                        <p style="margin-top: -15px;"> $234.00</p>
+                    </div>
+                </div>
+            </div>
+            }
+            @if(!showContent3){
+            <div>
+                <div class="d-flex  align-items-center justify-content-evenly    ">
+
+                    <img src="../../../assets/images/shoes/s18.jpg" style="width: 35%;" alt="">
+
+
+                    <div>
+                        <p class="text-muted small">Shoes 4</p>
+                        <p style="margin-top: -15px;"> $234.00</p>
+                    </div>
+                </div>
+                <div class="d-flex mt-4 align-items-center justify-content-evenly    ">
+
+                    <img src="../../../assets/images/shoes/s17.jpg" style="width: 35%;" alt="">
+
+
+                    <div>
+                        <p class="text-muted small">Shoes 5</p>
+                        <p style="margin-top: -15px;"> $20.00</p>
+                    </div>
+                </div>
+
+                <div class="d-flex mt-4 align-items-center justify-content-evenly    ">
+
+                    <img src="../../../assets/images/shoes/s12.jpg" style="width: 35%;" alt="">
+
+
+                    <div>
+                        <p class="text-muted small">Shoes 6</p>
+                        <p style="margin-top: -15px;"> $134.00</p>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- sizes  -->
+<section class="container mt-5" style="background-color: #F1F5F4;">
+    <div class="row gap-3 mx-4 mycp py-3">
+        <div class=" myhcont  d-flex align-content-center align-items-center justify-content-center ">
+            <p class="fs-5 fw-bold mt-3">SIZE 06</p>
+        </div>
+        <div class=" myhcont  d-flex align-content-center align-items-center justify-content-center ">
+            <p class="fs-5 fw-bold mt-3">SIZE 07</p>
+        </div>
+        <div class=" myhcont  d-flex align-content-center align-items-center justify-content-center ">
+            <p class="fs-5 fw-bold mt-3">SIZE 08</p>
+        </div>
+        <div class=" myhcont  d-flex align-content-center align-items-center justify-content-center ">
+            <p class="fs-5 fw-bold mt-3">SIZE 09</p>
+        </div>
+        <div class=" myhcont  d-flex align-content-center align-items-center justify-content-center ">
+            <p class="fs-5 fw-bold mt-3">SIZE 10</p>
+        </div>
+    </div>
+
+</section>
+
+<!-- Blogs  -->
+<section class="" style="background-color: #F1F5F4;">
+    <div class="mt-4 mt-sm-4 mt-md-5 pt-md-5 ">
+        <div class="cusdiv d-flex flex-column align-items-center">
+            <p class=" fs-5" style="color:#3EDFA9;">Recent Story</p>
+            <h1 class="fs-2 fw-bold " style="margin-top: -10px;">FROM<span class=" "
+                    style="border-bottom: 2px solid #3EDFA9;">
+                    THE</span> BLOG</h1>
+        </div>
+    </div>
+
+    <div class="container-fluid  pb-md-5  mt-4">
+        <div class="d-flex shoeblog flex-wrap px-5" style="width: 100%; margin: auto;">
+            @for(item of shoesblog; track item){
+            <div class="col-sm-6 col-md-4">
+                <div class="mycp">
+                    <img src={{item.img}} alt="" width="90%">
+                </div>
+                <div class="text-center mt-3">
+                    <p class=" fw-bold mycp" style="color: #3EDFA9;">{{item.date}}</p>
+                    <p class=" fw-bold mycp " style="margin-top: -10px;">LOREM IPSUM DOLOR SIT <br> CONSECTETUER
+                        ADISPIDING
+                        ELIT
+                    </p>
+                    <hr style="width: 20%;margin: auto;">
+
+                    <p class="text-muted">by: John Dio, 2 Comment</p>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>
+
+    <!-- delivery  -->
+    <section class="bg-white mt-5 mt-md-0 ">
+        <app-delivery></app-delivery>
+    </section>
+
+    <!-- logos -->
+    <section>
+        <app-logos></app-logos>
+    </section>

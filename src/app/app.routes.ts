@@ -22,6 +22,7 @@ import { PetsComponent } from './pages/pets/pets.component';
 import { GymComponent } from './pages/gym/gym.component';
 import { ToolComponent } from './pages/tool/tool.component';
 import { ShoesComponent } from './pages/shoes/shoes.component';
+import { BagsComponent } from './pages/bags/bags.component';
 
 
 export const routes: Routes = [
@@ -37,6 +38,7 @@ export const routes: Routes = [
     { path: 'gym', component: GymComponent }, 
     { path: 'tool', component: ToolComponent }, 
     { path: 'shoes', component: ShoesComponent }, 
+    { path: 'bags', component: BagsComponent }, 
     {
         path: 'dashboard',
         component: DashboardComponent,

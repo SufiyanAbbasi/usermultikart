@@ -19,18 +19,7 @@ export class ToolComponent {
     search = faMagnifyingGlass
     heart = faHeart
     compare = faCodeCompare
-    // showContent1: boolean = true;
-    // showContent2: boolean = false;
 
-    // toggleContent1() {
-    //   this.showContent1 = true;
-    //   this.showContent2 = false;
-    // }
-
-    // toggleContent2() {
-    //   this.showContent1 = false;
-    //   this.showContent2 = true;
-    // }
     showContent: boolean = true;
     toggleContent(){
         this.showContent = !this.showContent; 
