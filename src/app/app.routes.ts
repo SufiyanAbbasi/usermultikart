@@ -1,4 +1,6 @@
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule} from '@angular/router';
+import { InMemoryScrollingOptions, Routes, provideRouter, withInMemoryScrolling } from '@angular/router';
+import { NgModule } from '@angular/core';
 import { BestsellersComponent } from './shared/subspecialproducts/bestsellers/bestsellers.component';
 import { NewproductsComponent } from './shared/subspecialproducts/newproducts/newproducts.component';
 import { FeaturedproductComponent } from './shared/subspecialproducts/featuredproduct/featuredproduct.component';
@@ -23,6 +25,7 @@ import { GymComponent } from './pages/gym/gym.component';
 import { ToolComponent } from './pages/tool/tool.component';
 import { ShoesComponent } from './pages/shoes/shoes.component';
 import { BagsComponent } from './pages/bags/bags.component';
+import { MarijuanaComponent } from './pages/marijuana/marijuana.component';
 
 
 export const routes: Routes = [
@@ -39,6 +42,7 @@ export const routes: Routes = [
     { path: 'tool', component: ToolComponent }, 
     { path: 'shoes', component: ShoesComponent }, 
     { path: 'bags', component: BagsComponent }, 
+    { path: 'marijuana', component: MarijuanaComponent }, 
     {
         path: 'dashboard',
         component: DashboardComponent,
@@ -70,3 +74,7 @@ export const routes: Routes = [
     },
 
 ];
+const scrollConfig: InMemoryScrollingOptions = {
+    scrollPositionRestoration: 'enabled' // Must be 'enabled', 'disabled', or 'top'
+  };
+  export const routing = provideRouter(routes, withInMemoryScrolling(scrollConfig));
