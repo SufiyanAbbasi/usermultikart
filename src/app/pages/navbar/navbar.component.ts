@@ -5,6 +5,10 @@ import { faBars, faArrowAltCircleLeft, faSearch, faGear, faCartShopping } from '
 import { SidebarComponent } from "../../shared/sidebar/sidebar.component";
 import { SubnavComponent } from "../../shared/subnav/subnav.component";
 import { RouterLink } from '@angular/router';
+import { addcart } from '../../core/services/addcart.service';
+import { Observable } from 'rxjs';
+import { Topcollection } from '../../core/interfaces/topcollection';
+
 @Component({
   selector: 'app-navbar',
   standalone: true,
@@ -13,12 +17,25 @@ import { RouterLink } from '@angular/router';
   imports: [FontAwesomeModule, CommonModule, SidebarComponent, SubnavComponent, RouterLink]
 })
 
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
   bar = faBars;
   arrow = faArrowAltCircleLeft;
   search = faSearch;
   gear = faGear;
   cart = faCartShopping;
+
+  //services for item add to cart - open
+  cartItemCount$!: Observable<number>;
+  cartItems$!: Observable<Topcollection[]>;
+  constructor(private cartService: addcart  ) { }
+
+  ngOnInit(): void {
+    this.cartItemCount$ = this.cartService.getCartItemCount();
+    
+    this.cartItems$ = this.cartService.getCartItems();
+  }
+  //services for item add to cart - ends
+ 
 
 
   // Sidebar Code on fa-icon

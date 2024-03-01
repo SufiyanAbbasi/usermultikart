@@ -26,6 +26,7 @@ import { ToolComponent } from './pages/tool/tool.component';
 import { ShoesComponent } from './pages/shoes/shoes.component';
 import { BagsComponent } from './pages/bags/bags.component';
 import { MarijuanaComponent } from './pages/marijuana/marijuana.component';
+import { AddcartComponent } from './pages/addcart/addcart.component';
 
 
 export const routes: Routes = [
@@ -43,6 +44,7 @@ export const routes: Routes = [
     { path: 'shoes', component: ShoesComponent }, 
     { path: 'bags', component: BagsComponent }, 
     { path: 'marijuana', component: MarijuanaComponent }, 
+    { path: 'addcart', component: AddcartComponent }, 
     {
         path: 'dashboard',
         component: DashboardComponent,

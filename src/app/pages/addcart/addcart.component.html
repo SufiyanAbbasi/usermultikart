@@ -1,0 +1,40 @@
+<!-- addcart.component.html -->
+<section class="container-fluid">
+    <div class="d-flex justify-content-between px-0 px-sm-5 pt-3 " style="background-color: #F8F8F8;">
+        <div>
+            <p class="fw-bold ">CART</p>
+        </div>
+        <div>
+            <span class="mycp" routerLink="/dashboard">HOME </span> / CART
+        </div>
+
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped mt-4" *ngIf="cartItems.length > 0">
+            <thead>
+                <tr>
+                    <th scope="col">Image</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of cartItems; let i = index">
+                    <td><img src="{{item.mainimg}}" alt="" width="60px"></td>
+                    <td class="text-muted">{{item.dress}}</td>
+                    <td>{{ item.newprice }}</td>
+                    <!-- <td><button (click)="removeItem(item)">Remove</button></td>  -->
+                    <td><fa-icon [icon]="cross"  (click)="removeItem(item)"></fa-icon></td> 
+
+                </tr>
+            </tbody>
+        </table>
+        <div class="p-5 text-center" *ngIf="cartItems.length === 0">
+            <img src="../../../assets/images/addcart/icon-empty-cart.png" alt="">
+            <p class="text-muted fw-bold fs-5">Your Cart is Empty</p>
+            <p class="fs-6">Add Something To Make Me Happy : &#41;</p>
+        </div>
+    </div>
+</section>
