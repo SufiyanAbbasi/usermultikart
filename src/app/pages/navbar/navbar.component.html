@@ -17,10 +17,10 @@
         <app-subnav></app-subnav>
 
         <!-- Last three icons  -->
-        <div class="d-none d-sm-block mt-2">
+        <div class=" mt-2">
             <ul class="list-unstyled d-flex">
-                <li> <fa-icon [icon]="search" class="fa-xl text-secondary mycp"></fa-icon> </li>
-                <li class="ms-3" (mouseenter)="openChatBox()"> <fa-icon [icon]="gear"
+                <li class=" d-none d-sm-block"> <fa-icon [icon]="search" class="fa-xl text-secondary mycp"></fa-icon> </li>
+                <li class="ms-3 d-none d-sm-block " (mouseenter)="openChatBox()"> <fa-icon [icon]="gear"
                         class="fa-xl text-secondary mycp"></fa-icon>
                 </li>
                 @if(isChatBoxOpen){
@@ -48,11 +48,6 @@
                         cartItemCount$ | async }}</span>
                 </li>
                 @if(showCartBox){
-                <!-- <div class="container">
-                    <div class="cart-box">
-                        <p *ngIf="(cartItemCount$ | async) === 0">The cart is empty</p>
-                    </div>
-                </div> -->
                 <div class="container">
                     <div class="cart-box">
                         <p *ngIf="(cartItemCount$ | async) === 0">The cart is empty</p>

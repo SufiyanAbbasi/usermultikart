@@ -1,8 +1,7 @@
-export interface Topcollection {
+export interface Product {
     id: number;
     mainimg: string;
-    secondaryimg: string[];
-    dress: string;
+    name: string;
     newprice: string;
     oldprice: string;
     quantity: number; 

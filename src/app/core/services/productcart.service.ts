@@ -1,35 +1,35 @@
 import { Injectable } from '@angular/core';
+import { Product } from '../interfaces/product';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { Topcollection } from '../interfaces/topcollection';
 import { map } from 'rxjs/operators';
-
 
 @Injectable({
   providedIn: 'root'
 })
-export class addcart {
-  private cartItems: Topcollection[] = [];
-  private cartSubject: BehaviorSubject<Topcollection[]> = new BehaviorSubject<Topcollection[]>([]);
-
+export class ProductcartService {
 
   constructor() { }
+  private cartItems: Product[] = [];
+  private cartSubject: BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>([]);
 
-  getCart(): Observable<Topcollection[]> {
+
+
+  getCart(): Observable<Product[]> {
     return this.cartSubject.asObservable();
   }
 
-  addToCart(product: Topcollection) {
+  addToCart(product: Product) {
     const itemCopy = { ...product }; // Create a copy of the product
     this.cartItems.push(itemCopy); // Add the copy to the cartItems array
     this.cartSubject.next([...this.cartItems]);
 }
 
 
-  getCartItems(): Observable<Topcollection[]> {
+  getCartItems(): Observable<Product[]> {
     return this.cartSubject.asObservable();
   }
 
-  removeItem(product: Topcollection): void {
+  removeItem(product: Product): void {
     const index = this.cartItems.findIndex(item => item.id === product.id);
     if (index !== -1) {
       this.cartItems.splice(index, 1);

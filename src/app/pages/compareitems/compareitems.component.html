@@ -1,0 +1,41 @@
+<!-- compareitems.component.html -->
+<section class="container-fluid my-5 px-5">
+    <div class="d-flex justify-content-between px-0 px-sm-5 pt-3 ">
+        <div>
+            <p class="fw-bold ">COMPARE</p>
+        </div>
+        <div>
+            <span class="mycp" routerLink="/dashboard">HOME </span> / COMPARE
+        </div>
+
+    </div>
+    <div *ngIf="comparedItems.length > 0">
+        <table class="table px-5">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of comparedItems">
+                    <td><img [src]="item.mainimg" alt="Item Image" width="140"></td>
+                    <td class="text-muted">{{ item.dress }}</td>
+                    <td class="text-danger">{{ item.newprice }}</td>
+                    <td>{{item.description}}</td>
+                    <td><fa-icon [icon]="cross" (click)="removeItem(item)"></fa-icon></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="comparedItems.length === 0" class="text-center mt-4 ">
+
+        <img src="../../../assets/images/addcart/icon-empty-cart.png" alt="">
+        <p class="text-muted fw-bold fs-5">Your Compare List is Empty</p>
+        <p class="fs-6">Compare Something : &#41;</p>
+
+    </div>
+</section>

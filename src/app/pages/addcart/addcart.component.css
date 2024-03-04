@@ -1,0 +1,11 @@
+.mybtn {
+    margin: 0 8rem;
+    background-color: #fb4b3a;
+    color: white;
+}
+
+.mybtn:hover {
+    border: 2px solid #fb4b3a;
+    background: white;
+    color: black;
+}

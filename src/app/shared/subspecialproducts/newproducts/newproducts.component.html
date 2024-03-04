@@ -10,10 +10,10 @@
                     <img src="{{item.mainimg}}" style="margin-left: -20px;" alt="Image 1" class="main-image">
                 </div>
                 <div class="d-flex flex-column position-absolute myicons" style="bottom: 70px; right:10px">
-                    <fa-icon [icon]="cart"  class="mt-3  myfaicon"></fa-icon>
-                    <fa-icon [icon]="heart" class="mt-3  myfaicon"></fa-icon>
+                    <fa-icon [icon]="cart"  class="mt-3  myfaicon" (click)="addToCart(item)"></fa-icon>
+                    <fa-icon [icon]="heart" class="mt-3  myfaicon" (click)="showAlert()"></fa-icon>
                     <fa-icon [icon]="search" class="mt-3  myfaicon"></fa-icon>
-                    <fa-icon [icon]="compare" class="mt-3  myfaicon"></fa-icon>
+                    <fa-icon [icon]="compare" class="mt-3  myfaicon" (click)="addToCompare(item)"></fa-icon>
                 </div>
             </div>
             <div class="mx-2">

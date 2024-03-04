@@ -14,27 +14,52 @@
         <table class="table table-striped mt-4" *ngIf="cartItems.length > 0">
             <thead>
                 <tr>
-                    <th scope="col">Image</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Action</th>
+                    <th scope="col">IMAGE</th>
+
+                    <th scope="col">NAME</th>
+                    <th scope="col">PRICE</th>
+
+                    <th scope="col" class="d-none d-sm-table-cell">QUANTITY</th>
+                    <th scope="col">ACTION</th>
+                    <th scope="col" class="d-none d-sm-table-cell">TOTAL</th>
+
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let item of cartItems; let i = index">
-                    <td><img src="{{item.mainimg}}" alt="" width="60px"></td>
-                    <td class="text-muted">{{item.dress}}</td>
+                    <td><img src="{{item.mainimg}}" class="rounded-5 " alt="" width="60px"></td>
+
+                    <td class="text-muted" >{{item.dress}}</td>
                     <td>{{ item.newprice }}</td>
-                    <!-- <td><button (click)="removeItem(item)">Remove</button></td>  -->
-                    <td><fa-icon [icon]="cross"  (click)="removeItem(item)"></fa-icon></td> 
+
+                    <td class="d-none d-sm-table-cell">
+                        <!-- Quantity input with arrows -->
+                        <div class="quantity-container gap-2">
+                            <span class="quantity-arrow mycp fs-4" (click)="decreaseQuantity(item)">-</span>
+                            <input type="number" style="width: 40px;" [(ngModel)]="item.quantity"
+                                (ngModelChange)="updateTotalPrice(item)" min="1">
+                            <span class="quantity-arrow mycp fs-4 " (click)="increaseQuantity(item)">+</span>
+                        </div>
+                    </td>
+                    <td><fa-icon [icon]="cross" (click)="removeItem(item)"></fa-icon></td>
+                    <td class="d-none d-sm-table-cell" style="color: red;">{{ item.totalPrice }}</td>
+
 
                 </tr>
             </tbody>
         </table>
+        <div  *ngIf="cartItems.length > 0">
+            <div class="d-flex justify-content-between pb-5">
+                <button type="button" class="mybtn btn rounded-0 mt-2  px-3 py-2">CONTINUE SHOPPING</button>
+                <button type="button" class="mybtn btn rounded-0 mt-2  px-3 py-2">CHECK OUT</button>
+            </div>
+        </div>
         <div class="p-5 text-center" *ngIf="cartItems.length === 0">
             <img src="../../../assets/images/addcart/icon-empty-cart.png" alt="">
             <p class="text-muted fw-bold fs-5">Your Cart is Empty</p>
             <p class="fs-6">Add Something To Make Me Happy : &#41;</p>
         </div>
     </div>
+
+ 
 </section>
