@@ -5,6 +5,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faStar, faShoppingCart, faMagnifyingGlass, faHeart, faCodeCompare } from '@fortawesome/free-solid-svg-icons';
 import { DeliveryComponent } from "../../shared/delivery/delivery.component";
 import { LogosComponent } from "../../shared/logos/logos.component";
+import { addcart } from '../../core/services/addcart.service';
+import { CompareService } from '../../core/services/compare.service';
 
 @Component({
     selector: 'app-shoes',
@@ -19,6 +21,14 @@ export class ShoesComponent {
   search = faMagnifyingGlass
   heart = faHeart
   compare = faCodeCompare
+
+  product!: any[];
+  item!: any;
+  constructor(private cartService: addcart, private compareService: CompareService) { }
+  ngOnInit(): void {
+
+  }
+
 
   showContent: boolean = true;
   showContent1: boolean = true;
@@ -45,7 +55,11 @@ export class ShoesComponent {
       name: 'Shoes 1',
       newprice: '$60.00 ',
       oldprice: '$150.00',
-      showSecondary: false
+      showSecondary: false,
+      quantity: 1,
+      totalPrice: '$60.00 ',
+      description: "lorem ipsum dolor emit cos senta dom nesta alfredo",
+      dress: '',
     },
     {
       id: 2,
@@ -54,7 +68,11 @@ export class ShoesComponent {
       name: 'Shoes 2',
       newprice: '$179.00 ',
       oldprice: '$229.00',
-      showSecondary: false
+      showSecondary: false,
+      quantity: 1,
+      totalPrice: '$179.00 ',
+      description: "lorem ipsum dolor emit cos senta dom nesta alfredo",
+      dress: '',
     },
     {
       id: 3,
@@ -63,7 +81,11 @@ export class ShoesComponent {
       name: 'Shoes 3',
       newprice: '$234.00 ',
       oldprice: '$260.00',
-      showSecondary: false
+      showSecondary: false,
+      quantity: 1,
+      totalPrice: '$234.00 ',
+      description: "lorem ipsum dolor emit cos senta dom nesta alfredo",
+      dress: '',
     },
     {
       id: 4,
@@ -72,7 +94,11 @@ export class ShoesComponent {
       name: 'Shoes 4',
       newprice: '$360.00 ',
       oldprice: '$450.00',
-      showSecondary: false
+      showSecondary: false,
+      quantity: 1,
+      totalPrice: '$360.00 ',
+      description: "lorem ipsum dolor emit cos senta dom nesta alfredo",
+      dress: '',
     },
 
 
@@ -96,4 +122,19 @@ export class ShoesComponent {
     },
 
   ]
+    //add to cart function
+    addToCart(product: any) {
+      this.cartService.addToCart(product);
+    }
+  
+    // wishlist 
+    showAlert() {
+      alert("This Item has been added to wishlist")
+    }
+  
+    // compare function 
+    addToCompare(item: any): void {
+      this.compareService.addToCompare(item);
+      alert("Click ok! to compare")
+    }
 }

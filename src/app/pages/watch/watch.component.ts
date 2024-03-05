@@ -1,10 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { LogosComponent } from "../../shared/logos/logos.component";
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faStar, faShoppingCart, faMagnifyingGlass, faHeart, faCodeCompare } from '@fortawesome/free-solid-svg-icons';
 import { DeliveryComponent } from "../../shared/delivery/delivery.component";
+import { Topcollection } from '../../core/interfaces/topcollection';
+import { addcart } from '../../core/services/addcart.service';
+import { CompareService } from '../../core/services/compare.service';
 
 @Component({
     selector: 'app-watch',
@@ -13,7 +16,7 @@ import { DeliveryComponent } from "../../shared/delivery/delivery.component";
     styleUrl: './watch.component.css',
     imports: [RouterLink, FontAwesomeModule, LogosComponent, CommonModule, DeliveryComponent]
 })
-export class WatchComponent {
+export class WatchComponent implements OnInit {
 
     star = faStar
     cart = faShoppingCart
@@ -21,7 +24,13 @@ export class WatchComponent {
     heart = faHeart
     compare = faCodeCompare
 
-    mywatch: any = [
+    product!: Topcollection[];
+    constructor(private cartService: addcart, private compareService: CompareService) { }
+    ngOnInit(): void {
+
+    }
+
+    mywatch: any[] = [
         {
             id: 0,
             name: 'WATCH MODELS',
@@ -60,34 +69,54 @@ export class WatchComponent {
         },
     ]
 
-    trendwatch: any = [
+    trendwatch: Topcollection[] = [
         {
             id: 1,
             mainimg: "../../../assets/images/watch/watch8.jpg",
             name: 'Watch 1',
             newprice: '$156.00 ',
-            oldprice: '$205.00'
+            oldprice: '$205.00',
+            quantity: 1,
+            totalPrice: '$156.00 ',
+            description: "lorem ipsum dolor emit cos senta dom nesta alfredo",
+            secondaryimg: [],
+            dress: '',
         },
         {
             id: 2,
             mainimg: "../../../assets/images/watch/watch11.jpg",
             name: 'Watch 2',
             newprice: '$207.00 ',
-            oldprice: '$315.00'
+            oldprice: '$315.00',
+            quantity: 1,
+            totalPrice: '$215.00 ',
+            description: "lorem ipsum dolor emit cos senta dom nesta alfredo",
+            secondaryimg: [],
+            dress: '',
         },
         {
             id: 3,
             mainimg: "../../../assets/images/watch/watch10.jpg",
             name: 'Watch 3',
             newprice: '$335.00 ',
-            oldprice: '$447.00'
+            oldprice: '$447.00',
+            quantity: 1,
+            totalPrice: '$335.00 ',
+            description: "lorem ipsum dolor emit cos senta dom nesta alfredo",
+            secondaryimg: [],
+            dress: '',
         },
         {
             id: 4,
             mainimg: "../../../assets/images/watch/watch11.jpg",
             name: 'Watch 4',
             newprice: '$446.00 ',
-            oldprice: '$530.00'
+            oldprice: '$530.00',
+            quantity: 1,
+            totalPrice: '$446.00 ',
+            description: "lorem ipsum dolor emit cos senta dom nesta alfredo",
+            secondaryimg: [],
+            dress: '',
         },
 
 
@@ -95,22 +124,38 @@ export class WatchComponent {
 
     watchblog: any = [
         {
-          id:0,
-          img: 'assets/images/watch/watch16.jpg',
-          date: '25 January 2018',
+            id: 0,
+            img: 'assets/images/watch/watch16.jpg',
+            date: '25 January 2018',
         },
         {
-          id:1,
-          img: 'assets/images/watch/watch17.jpg',
-          date: '26 January 2018',
+            id: 1,
+            img: 'assets/images/watch/watch17.jpg',
+            date: '26 January 2018',
         },
         {
-          id:2,
-          img: 'assets/images/watch/watch18.jpg',
-          date: '27 January 2018',
+            id: 2,
+            img: 'assets/images/watch/watch18.jpg',
+            date: '27 January 2018',
         },
-    
-      ]
+
+    ]
+
+
+
+    addToCart(product: Topcollection) {
+        this.cartService.addToCart(product);
+    }
+
+    showAlert() {
+        alert("This Item has been added to wishlist")
+    }
+
+    // compare function 
+    addToCompare(item: Topcollection): void {
+        this.compareService.addToCompare(item);
+        alert("Click ok! to compare")
+    }
 
 
 }

@@ -29,7 +29,7 @@
                 <tr *ngFor="let item of cartItems; let i = index">
                     <td><img src="{{item.mainimg}}" class="rounded-5 " alt="" width="60px"></td>
 
-                    <td class="text-muted" >{{item.dress}}</td>
+                    <td class="text-muted" >{{item.dress}}{{item.name}}</td>
                     <td>{{ item.newprice }}</td>
 
                     <td class="d-none d-sm-table-cell">
@@ -48,7 +48,7 @@
                 </tr>
             </tbody>
         </table>
-        <div  *ngIf="cartItems.length > 0">
+        <div class="d-none d-lg-block" *ngIf="cartItems.length > 0">
             <div class="d-flex justify-content-between pb-5">
                 <button type="button" class="mybtn btn rounded-0 mt-2  px-3 py-2">CONTINUE SHOPPING</button>
                 <button type="button" class="mybtn btn rounded-0 mt-2  px-3 py-2">CHECK OUT</button>

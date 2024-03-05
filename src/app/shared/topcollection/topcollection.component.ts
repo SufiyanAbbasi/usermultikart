@@ -12,7 +12,6 @@ import { CompareService } from '../../core/services/compare.service';
   imports: [FontAwesomeModule, CommonModule],
   templateUrl: './topcollection.component.html',
   styleUrl: './topcollection.component.css',
-  // providers: [addcart]
 })
 export class TopcollectionComponent implements OnInit {
   star = faStar
@@ -36,7 +35,8 @@ export class TopcollectionComponent implements OnInit {
       oldprice: '$145.00', 
       quantity: 1,
       totalPrice: '$87.00 ' ,
-      description: "lorem ipsum dolor emit cos senta dom nesta alfredo"
+      description: "lorem ipsum dolor emit cos senta dom nesta alfredo",
+      name: ""
     },
     {
       id: 2,
@@ -47,7 +47,8 @@ export class TopcollectionComponent implements OnInit {
       oldprice: '$185.00',
       quantity: 1,
       totalPrice: '$111.00 ' ,
-      description: "lorem ipsum dolor emit cos senta dom nesta alfredo"
+      description: "lorem ipsum dolor emit cos senta dom nesta alfredo",
+      name: ""
     },
     {
       id: 3,
@@ -58,7 +59,8 @@ export class TopcollectionComponent implements OnInit {
       oldprice: '$174.00',
       quantity: 1,
       totalPrice: '$104.00 ' ,
-      description: "lorem ipsum dolor emit cos senta dom nesta alfredo"
+      description: "lorem ipsum dolor emit cos senta dom nesta alfredo",
+      name: ""
     },
     {
       id: 4,
@@ -69,7 +71,8 @@ export class TopcollectionComponent implements OnInit {
       oldprice: '$98.00',
       quantity: 1,
       totalPrice: '$49.00 ' ,
-      description: "lorem ipsum dolor emit cos senta dom nesta alfredo"
+      description: "lorem ipsum dolor emit cos senta dom nesta alfredo",
+      name: ""
     },
 
 

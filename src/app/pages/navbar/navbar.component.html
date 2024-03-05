@@ -42,8 +42,8 @@
                     </div>
                 </div>
                 }
-                <li class="ms-3 position-relative" (mouseenter)="showCartBox = true" (mouseleave)="showCartBox = false">
-                    <fa-icon [icon]="cart" class="fa-xl text-secondary mycp" routerLink="addcart"></fa-icon>
+                <li class="ms-3 position-relative" (mouseenter)="showCartBox = true" (mouseleave)="showCartBox = false"  routerLink="addcart">
+                    <fa-icon [icon]="cart" class="fa-xl text-secondary mycp"></fa-icon>
                     <span class="badge bg-danger position-absolute rounded-5" style="bottom: 25px; left: 10px; ">{{
                         cartItemCount$ | async }}</span>
                 </li>
@@ -54,7 +54,7 @@
                         <div class="d-flex mt-3  " *ngFor="let item of cartItems$ | async">
                             <img [src]="item.mainimg" style="width: 50px;" alt="Product Image">
                             <div class="d-flex flex-column  ">
-                                <p>{{ item.dress }}</p>
+                                <p>{{ item.dress }}{{item.name}}</p>
                                 <p style="margin-top: -15px;">{{ item.newprice }}</p>
                             </div>
                         </div>

@@ -3,6 +3,9 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faStar, faShoppingCart, faMagnifyingGlass, faHeart, faCodeCompare } from '@fortawesome/free-solid-svg-icons';
+import { Topcollection } from '../../core/interfaces/topcollection';
+import { addcart } from '../../core/services/addcart.service';
+import { CompareService } from '../../core/services/compare.service';
 
 @Component({
   selector: 'app-beauty',
@@ -18,36 +21,64 @@ export class BeautyComponent {
   heart = faHeart
   compare = faCodeCompare
 
+  product!: Topcollection[];
+  item!: Topcollection;
+  constructor(private cartService: addcart, private compareService: CompareService) { }
+  ngOnInit(): void {
+
+  }
 
 
-  beautynewprod: any = [
+
+
+  beautynewprod: Topcollection[] = [
     {
       id: 1,
       mainimg: "../../../assets/images/beauty/be4.jpg",
       name: 'Foundation',
       newprice: '$202.00 ',
-      oldprice: '$225.00'
+      oldprice: '$225.00',
+      quantity: 1,
+      totalPrice: '$202.00 ',
+      description: "lorem ipsum dolor emit cos senta dom nesta alfredo",
+      secondaryimg: [],
+      dress: '',
     },
     {
       id: 2,
       mainimg: "../../../assets/images/beauty/be5.jpg",
       name: 'Bronzer',
       newprice: '$135.00 ',
-      oldprice: '$150.00'
+      oldprice: '$150.00',
+      quantity: 1,
+      totalPrice: '$135.00 ',
+      description: "lorem ipsum dolor emit cos senta dom nesta alfredo",
+      secondaryimg: [],
+      dress: '',
     },
     {
       id: 3,
       mainimg: "../../../assets/images/beauty/be6.jpg",
       name: 'Face Primer',
       newprice: '$280.00 ',
-      oldprice: '$312.00'
+      oldprice: '$312.00',
+      quantity: 1,
+      totalPrice: '$280.00 ',
+      description: "lorem ipsum dolor emit cos senta dom nesta alfredo",
+      secondaryimg: [],
+      dress: '',
     },
     {
       id: 4,
       mainimg: "../../../assets/images/beauty/be7.jpg",
       name: 'Concealer',
       newprice: '$104.00 ',
-      oldprice: '$130.00'
+      oldprice: '$130.00',
+      quantity: 1,
+      totalPrice: '$104.00 ',
+      description: "lorem ipsum dolor emit cos senta dom nesta alfredo",
+      secondaryimg: [],
+      dress: '',
     },
 
 
@@ -71,5 +102,20 @@ export class BeautyComponent {
     },
 
   ]
+    //add to cart function
+    addToCart(product: Topcollection) {
+      this.cartService.addToCart(product);
+    }
+  
+    // wishlist 
+    showAlert() {
+      alert("This Item has been added to wishlist")
+    }
+  
+    // compare function 
+    addToCompare(item: Topcollection): void {
+      this.compareService.addToCompare(item);
+      alert("Click ok! to compare")
+    }
 
 }

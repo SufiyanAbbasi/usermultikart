@@ -3,9 +3,9 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faStar, faShoppingCart, faMagnifyingGlass, faHeart, faCodeCompare } from '@fortawesome/free-solid-svg-icons';
-import { Product } from '../../core/interfaces/product';
-import { ProductcartService } from '../../core/services/productcart.service';
-import { ProductcompareService } from '../../core/services/productcompare.service';
+import { addcart } from '../../core/services/addcart.service';
+import { CompareService } from '../../core/services/compare.service';
+import { Topcollection } from '../../core/interfaces/topcollection';
 
 
 @Component({
@@ -23,13 +23,14 @@ export class VegetableComponent {
   heart = faHeart
   compare = faCodeCompare
 
-  product!: Product[];
-  constructor(private cartService: ProductcartService, private compareService: ProductcompareService) { }
+  product!: Topcollection[];
+  item!: Topcollection;
+  constructor(private cartService: addcart, private compareService: CompareService) { }
   ngOnInit(): void {
-    
+
   }
 
-  vegetable: Product[] = [
+  vegetable: Topcollection[] = [
     {
       id: 1,
       mainimg: "../../../assets/images/vegetable/veg3.jpg",
@@ -37,8 +38,10 @@ export class VegetableComponent {
       newprice: '$31.00 ',
       oldprice: '$35.00',
       quantity: 1,
-      totalPrice: '$31.00 ' ,
-      description: "lorem ipsum dolor emit cos senta dom nesta alfredo"
+      totalPrice: '$31.00 ',
+      description: "lorem ipsum dolor emit cos senta dom nesta alfredo",
+      secondaryimg: [],
+      dress: '',
     },
     {
       id: 2,
@@ -47,8 +50,10 @@ export class VegetableComponent {
       newprice: '$11.00 ',
       oldprice: '$15.00',
       quantity: 1,
-      totalPrice: '$11.00 ' ,
-      description: "lorem ipsum dolor emit cos senta dom nesta alfredo"
+      totalPrice: '$11.00 ',
+      description: "lorem ipsum dolor emit cos senta dom nesta alfredo",
+      secondaryimg: [],
+      dress: '',
     },
     {
       id: 3,
@@ -57,8 +62,10 @@ export class VegetableComponent {
       newprice: '$10.00 ',
       oldprice: '$14.00',
       quantity: 1,
-      totalPrice: '$10.00 ' ,
-      description: "lorem ipsum dolor emit cos senta dom nesta alfredo"
+      totalPrice: '$10.00 ',
+      description: "lorem ipsum dolor emit cos senta dom nesta alfredo",
+      secondaryimg: [],
+      dress: '',
     },
     {
       id: 4,
@@ -67,8 +74,10 @@ export class VegetableComponent {
       newprice: '$19.00 ',
       oldprice: '$30.00',
       quantity: 1,
-      totalPrice: '$19.00 ' ,
-      description: "lorem ipsum dolor emit cos senta dom nesta alfredo"
+      totalPrice: '$19.00 ',
+      description: "lorem ipsum dolor emit cos senta dom nesta alfredo",
+      secondaryimg: [],
+      dress: '',
     },
 
 
@@ -96,17 +105,17 @@ export class VegetableComponent {
   ]
 
   //add to cart function
-  addToCart(product: Product) {
+  addToCart(product: Topcollection) {
     this.cartService.addToCart(product);
   }
- 
+
   // wishlist 
-  showAlert(){
-   alert("This Item has been added to wishlist")
+  showAlert() {
+    alert("This Item has been added to wishlist")
   }
 
   // compare function 
-  addToCompare(item: Product): void {
+  addToCompare(item: Topcollection): void {
     this.compareService.addToCompare(item);
     alert("Click ok! to compare")
   }

@@ -61,7 +61,7 @@
 </div>
 <div class="container-fluid  d-flex justify-content-evenly   border-1 px-5 my-5">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3  row-cols-lg-4">
-        @for(item of bestsellerfurniture; track item.id;){
+        @for(item of gym; track item.id;){
         <div class="d-flex flex-column mt-4  rounded-4">
             <div class="container1 mx-2 mycp position-relative maindiv" style="background-color: #F8F8F8;">
                 <div class="rounded-5 d-flex  align-content-center align-items-center  position-absolute ms-2"
@@ -72,10 +72,10 @@
                     <img src="{{item.mainimg}}" style="margin-left: -10px;" alt="Image 1" class="main-image">
                 </div>
                 <div class="d-flex flex-column position-absolute myicons" style="bottom: 70px; right:10px">
-                    <fa-icon [icon]="cart" class="mt-3  myfaicon"></fa-icon>
-                    <fa-icon [icon]="heart" class="mt-3  myfaicon"></fa-icon>
+                    <fa-icon [icon]="cart" class="mt-3  myfaicon" (click)="addToCart(item)"></fa-icon>
+                    <fa-icon [icon]="heart" class="mt-3  myfaicon" (click)="showAlert()"></fa-icon>
                     <fa-icon [icon]="search" class="mt-3  myfaicon"></fa-icon>
-                    <fa-icon [icon]="compare" class="mt-3  myfaicon"></fa-icon>
+                    <fa-icon [icon]="compare" class="mt-3  myfaicon"  (click)="addToCompare(item)"></fa-icon>
                 </div>
             </div>
             <div class="mx-2  text-center">
