@@ -11,6 +11,7 @@
                 <app-sidebar></app-sidebar>
             </div>
             <img src="assets/images/logo.png" routerLink="dashboard" alt="" class="ms-4 ms-lg-5 mt-2 mycp">
+               <!-- <p class="ms-4 ms-lg-5 mt-2 mycp fs-1">ClothKart</p> -->
         </div>
 
         <!-- this is subnav component -->
@@ -42,13 +43,13 @@
                     </div>
                 </div>
                 }
-                <li class="ms-3 position-relative" (mouseenter)="showCartBox = true" (mouseleave)="showCartBox = false"  routerLink="addcart">
+                <li class="ms-3 position-relative" (mouseenter)="showCartBox = true" (mouseleave)="showCartBox = false" routerLink="addcart">
                     <fa-icon [icon]="cart" class="fa-xl text-secondary mycp"></fa-icon>
                     <span class="badge bg-danger position-absolute rounded-5" style="bottom: 25px; left: 10px; ">{{
                         cartItemCount$ | async }}</span>
                 </li>
                 @if(showCartBox){
-                <div class="container">
+                <div class="container" >
                     <div class="cart-box">
                         <p *ngIf="(cartItemCount$ | async) === 0">The cart is empty</p>
                         <div class="d-flex mt-3  " *ngFor="let item of cartItems$ | async">

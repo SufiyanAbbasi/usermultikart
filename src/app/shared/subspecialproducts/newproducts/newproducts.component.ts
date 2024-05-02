@@ -6,7 +6,7 @@ import { faStar, faShoppingCart, faMagnifyingGlass, faHeart, faCodeCompare } fro
 import { Topcollection } from '../../../core/interfaces/topcollection';
 import { addcart } from '../../../core/services/addcart.service';
 import { CompareService } from '../../../core/services/compare.service';
-import { Cartitem } from '../../../core/interfaces/cartitem';
+// import { Cartitem } from '../../../core/interfaces/cartitem';
 
 @Component({
   selector: 'app-newproducts',
