@@ -44,7 +44,7 @@
             (mouseenter)="toggleSublistVisibility(box.id)"
             (mouseleave)="toggleSublistVisibility(box.id)">
             <p>{{box.title}}</p>
-            @if(box.sublist && box.sublist.length > 1){
+            <!-- @if(box.sublist && box.sublist.length > 1){
             <p class="fa-xl fw-bold "> ></p>
             }
             <div class="chatboxone " id="clothingChatboxone">
@@ -55,23 +55,8 @@
                     }
                 </ul>
                 }
-            </div>
+            </div> -->
         </li>
         }
     </ul>
-
-    <!-- old method of using @for which is *ngFor  -->
-    <!-- <ul class="mt-1" id="clothingone">
-        <li *ngFor="let box of mylist.num; let i = index"
-            class="mycp d-flex justify-content-between align-content-center align-items-center mt-3"
-            (mouseenter)="toggleSublistVisibility(i)" (mouseleave)="toggleSublistVisibility(i)">
-            <p>{{ box.title }}</p>
-            <p class="fa-xl fw-bold">></p>
-            <div class="chatboxone" id="clothingChatboxone">
-                <ul class="list-unstyled ps-4" *ngIf="box.isSublistVisible">
-                    <li *ngFor="let item of box.sublist" class="mt-2 mycp">{{ item }}</li>
-                </ul>
-            </div>
-        </li>
-    </ul> -->
 </div>

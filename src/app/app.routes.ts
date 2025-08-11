@@ -32,7 +32,7 @@ import { CompareitemsComponent } from './pages/compareitems/compareitems.compone
 
 export const routes: Routes = [
 
-    { path: '', component: LoginComponent },
+    { path: '', component: DashboardComponent },
     { path: 'login', component: LoginComponent },
     // { path: 'dashboard', component: DashboardComponent },
     { path: 'vegetable', component: VegetableComponent },
